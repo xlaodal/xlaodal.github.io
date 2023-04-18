@@ -4,6 +4,90 @@
   
   
   <entry>
+    <title>JavaWeb06Maven</title>
+    <link href="/2023/04/19/JavaWeb06Maven/"/>
+    <url>/2023/04/19/JavaWeb06Maven/</url>
+    
+    <content type="html"><![CDATA[<p>Maven</p><p>我为什么要学习这个技术</p><p>在Javaweb开发中，需要使用大量的jar包，我们手动去导入</p><p>如何能够让一个东西自动帮我导入和配置这个jar包</p><p>Maven项目架构管理工具</p><p>我们莫钱用来就是更加方便的到rujar包的</p><p>Maven的核心思想：</p><ul><li>约定大于配置</li><li>有约束，不要去违反</li></ul><h3 id="5-2下载Maven"><a href="#5-2下载Maven" class="headerlink" title="5.2下载Maven"></a>5.2下载Maven</h3><p>官网：<a href="https://maven.apache.org/">https://maven.apache.org/</a> </p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331104033298.png" alt="image-20230331104033298"></p><h1 id="配置环境变量："><a href="#配置环境变量：" class="headerlink" title="配置环境变量："></a>配置环境变量：</h1><p>在系统换将变量中</p><p>配置如下</p><ol><li>M2_HOME   maven目录下的bin目录</li><li>MAVEN_HOME   maven的目录</li><li>在系统的path中配置  %MAVEN_HOME%&#x2F;bin</li></ol><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331104313003.png" alt="image-20230331104313003"></p><p>测试maven是否安装成功，保证必须配置完毕</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaWeb05Servlet</title>
+    <link href="/2023/04/19/JavaWeb05Servlet/"/>
+    <url>/2023/04/19/JavaWeb05Servlet/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaWeb04Http</title>
+    <link href="/2023/04/19/JavaWeb04Http/"/>
+    <url>/2023/04/19/JavaWeb04Http/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h1><h2 id="4-1什么是Http"><a href="#4-1什么是Http" class="headerlink" title="4.1什么是Http"></a>4.1什么是Http</h2><p>HTTP（超文本传输协议）是一个简单的请求-响应协议，它通常运行在TCP之上。</p><p>文本：html，字符串</p><p>超文本：图片，音乐，视频，定位，地图</p><p>80</p><p>Https:安全的</p><p>443</p><h2 id="4-2俩个时代"><a href="#4-2俩个时代" class="headerlink" title="4.2俩个时代"></a>4.2俩个时代</h2><p>Http 01</p><p>Http&#x2F;1.0 客户端可以与web服务器连接后，只能获得一个web资源，断开连接</p><p>http2.0</p><p>Http&#x2F;1.1：客户端可以与web服务器连接后，可以获得多个web资源</p><h2 id="4-3Http请求"><a href="#4-3Http请求" class="headerlink" title="4.3Http请求"></a>4.3Http请求</h2><p>客户端发送一份请求（request）—-服务器</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">Request URL:https:<span class="hljs-comment">//www.baidu.com/ 请求地址</span><br>Request Method:GET   <span class="hljs-comment">//git方法或则post方法</span><br>Remote code：<span class="hljs-number">200</span> OK <span class="hljs-comment">//状态码：200</span><br>Remote(远程) Address：<span class="hljs-number">114.215</span><span class="hljs-number">.177</span><span class="hljs-number">.39</span><span class="hljs-number">.443</span><br>    <br>Accept:text/html<br>Accept-Encoding:gzip, deflate, br   <br>Accept-Language:zh-CN,zh;q=<span class="hljs-number">0.9</span>  <span class="hljs-comment">//语言</span><br>Cache-Control:max-age=<span class="hljs-number">0</span><br>Connection:keep-alive<br></code></pre></td></tr></table></figure><h3 id="4-3-1请求行"><a href="#4-3-1请求行" class="headerlink" title="4.3.1请求行"></a>4.3.1请求行</h3><p>请求行中的请求方式：GET</p><p>请求方式</p><ol><li><p>get：请求能够携带的参数比较少大小有限制，会在浏览器的URL地址栏显示数据内容，不安全，但高效</p></li><li><p>post：请求能够携带的参数没有限制，大小没有限制，不会在浏览器的URL地址栏显示数据内 容，安全，但不高效。</p></li></ol><p><strong>消息头</strong></p><p>Accept：告诉浏览器，它所支持的数据类型</p><p>Accept-Encoding：支持哪种编码格式 GBKUTF-8     GB2312     ISO8859-1</p><p>Accept-Language：告诉浏览器，它的语言环境</p><p>Cache-Control：缓存控制</p><p>Connection：告诉浏览器，请求完成是断开还是保持连接</p><p>HOST：主机&#x2F;</p><h2 id="4-4Http请求响应"><a href="#4-4Http请求响应" class="headerlink" title="4.4Http请求响应"></a>4.4Http请求响应</h2><p>Cache-Control:private      缓存控制</p><p>Connection:Keep-Alive        连接</p><p>Content-Encoding:gzip          编码</p><p>Content-Type:text&#x2F;html        类型</p><h3 id="1-响应体"><a href="#1-响应体" class="headerlink" title="1.响应体"></a>1.响应体</h3><ol><li><p>Accept：告诉浏览器，它所支持的数据类型</p></li><li><p>Accept-Encoding：支持哪种编码格式 GBKUTF-8</p></li><li><p>Accept-Language：告诉浏览器，它的语言环境</p></li><li><p>Cache-Control：缓存控制</p></li><li><p>Connection：告诉浏览器，请求完成是断开还是保持连接</p></li><li><p>HOST：主机&#x2F;.</p></li><li><p>Refresh：告诉客户端，多久刷新一次；</p></li><li><p>Location：让网页重新定位；</p></li></ol><h3 id="响应状态吗："><a href="#响应状态吗：" class="headerlink" title="响应状态吗："></a>响应状态吗：</h3><ol><li>200：请求响应成功200</li><li>3XX：请求重定向</li><li>重定向：你重新到我给你新位置去</li><li>4XX：找不到资源：</li><li>5XX：服务器代码错误 500   502 网关错误</li></ol><h2 id="常见面试题："><a href="#常见面试题：" class="headerlink" title="常见面试题："></a>常见面试题：</h2><p>当你的浏览器中地址栏中输入地址并回车的一瞬间到页面能够展示页面，浏览器经历了什么</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaWeb03Tomcat</title>
+    <link href="/2023/04/19/JavaWeb03Tomcat/"/>
+    <url>/2023/04/19/JavaWeb03Tomcat/</url>
+    
+    <content type="html"><![CDATA[<p>Tomcat</p><p>3.1安装tomcat</p><p>tomcat官网：<a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331011711019.png" alt="image-20230331011711019"></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331011715202.png" alt="image-20230331011715202"></p><h2 id="3-2Tomcat启动和配置"><a href="#3-2Tomcat启动和配置" class="headerlink" title="3.2Tomcat启动和配置"></a>3.2Tomcat启动和配置</h2><p>文件夹作用：</p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331011736930.png" alt="image-20230331011736930"></p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331011740608.png" alt="image-20230331011740608"></p><p>访问测试：<a href="http://localhost:8080/">http://localhost:8080/</a> </p><p>可能遇到的问题：</p><ol><li>Java环境变量没有配置</li><li>闪退问题：需要配置兼容性</li><li>乱码问题：配置文件中设置</li></ol><h2 id="3-3、配置"><a href="#3-3、配置" class="headerlink" title="3.3、配置"></a>3.3、配置</h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331011812316.png" alt="image-20230331011812316"></p><p>可以配置启动的端口号</p><p>tomcat的默认端口号为：8080</p><p>mysql：3306</p><p>http：80 https</p><p>443</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;Connector port=<span class="hljs-string">&quot;8081&quot;</span> protocol=<span class="hljs-string">&quot;HTTP/1.1&quot;</span> connectionTimeout=<span class="hljs-string">&quot;20000&quot;</span><br>redirectPort=<span class="hljs-string">&quot;8443&quot;</span> /&gt;<br></code></pre></td></tr></table></figure><p>可以配置主机的名称</p><p>默认的主机名为：localhost-&gt;127.0.0.1 </p><p>默认网站应用存放的位置为：webapps</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;Host name=<span class="hljs-string">&quot;www.qinjiang.com&quot;</span> appBase=<span class="hljs-string">&quot;webapps&quot;</span><br>unpackWARs=<span class="hljs-string">&quot;true&quot;</span> autoDeploy=<span class="hljs-string">&quot;true&quot;</span>&gt;<br></code></pre></td></tr></table></figure><h3 id="高难度面试题："><a href="#高难度面试题：" class="headerlink" title="高难度面试题："></a><strong>高难度面试题：</strong></h3><p>请你谈谈网站是如何进行访问的！</p><ol><li>输入一个域名；回车</li><li>检查本机的 C:\Windows\System32\drivers\etc\hosts配置文件下有没有这个域名映射；</li><li>有：直接返回对应的ip地址，这个地址中，有我们需要访问的web程序，可以直接访问</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>     www.qinjiang.com<br></code></pre></td></tr></table></figure><p>没有：去DNS服务器找，找到的话就返回，找不到就返回找不到；</p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331012032432.png" alt="image-20230331012032432"></p><ol><li>可以配置一下环境变量（可选性）</li></ol><p>发布一个web网站</p><p>不会就先模仿</p><p>将自己写的网站，放到服务器(Tomcat)中指定的web应用的文件夹（webapps)下，就可以访问了 网站应该有的结构</p><p>HTTP协议 ： 面试</p><p>Maven：构建工具</p><p>Maven安装包</p><p>Servlet 入门</p><p>HelloWorld！</p><p>Servlet配置</p><p>原理</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaWeb02web服务器</title>
+    <link href="/2023/04/19/JavaWeb02web%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <url>/2023/04/19/JavaWeb02web%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<p>web服务器</p><p>技术讲解</p><p>微软：国内最早流行的就是ASP</p><p>在HTML中嵌入了VB的脚本， ASP + COM</p><p>在ASP开发中，基本一个页面都有几千行的业务代码，页面极其换乱</p><p>维护成本高</p><p>C# </p><p>IIS</p><p>php</p><p>PHP开发速度很快，功能很强大，跨平台，代码很简单 （70% , WP)</p><p>无法承载大访问量的情况（局限性）</p><h4 id="JSP-x2F-Servlet"><a href="#JSP-x2F-Servlet" class="headerlink" title="JSP&#x2F;Servlet"></a><strong>JSP&#x2F;Servlet</strong></h4><p>B&#x2F;S：浏览和服务器C&#x2F;S: 客户端和服务器</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps27.png" alt="img">sun公司主推的B&#x2F;S架构</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps28.png" alt="img">基于Java语言的 (所有的大公司，或者一些开源的组件，都是用Java写的)</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps29.png" alt="img">可以承载三高问题带来的影响；</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps30.png" alt="img">语法像ASP ， ASP–&gt;JSP , 加强市场强度；</p><p>web服务器</p><p>服务器是一种被动的操作，用来处理用户的一些请求和给用户一些响应信息</p><h4 id="IIS"><a href="#IIS" class="headerlink" title="IIS"></a>IIS</h4><p>微软的； ASP…,Windows中自带的</p><p>Tomca</p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331011604104.png" alt="image-20230331011604104"></p><p>Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个Java初学web的人来说，它是最佳的选择</p><p>下载tomcat：</p><ol><li>安装 or 解压</li><li>了解配置文件及目录结构</li><li>这个东西的作用</li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaWeb01基础</title>
+    <link href="/2023/04/19/JavaWeb01%E5%9F%BA%E7%A1%80/"/>
+    <url>/2023/04/19/JavaWeb01%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h1><h2 id="1-1、前言"><a href="#1-1、前言" class="headerlink" title="1.1、前言"></a>1.1、前言</h2><p>web开发：</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps1.png" alt="img">web，网页的意思 ， <a href="http://www.baidu.com/">www.baidu.com</a></p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps2.png" alt="img">静态web</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps3.png" alt="img">html，css</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps4.png" alt="img"><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps5.png" alt="img">提供给所有人看的数据始终不会发生变化！ 动态web</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps6.png" alt="img">淘宝，几乎是所有的网站；</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps7.png" alt="img">提供给所有人看的数据始终会发生变化，每个人在不同的时间，不同的地点看到的信息各不相 同！</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps8.png" alt="img">技术栈：Servlet&#x2F;JSP，ASP，PHP</p><p>在Java中，动态web资源开发的技术统称为JavaWeb；</p><h2 id="1-2、web应用程序"><a href="#1-2、web应用程序" class="headerlink" title="1.2、web应用程序"></a>1.2、web应用程序</h2><p>web应用程序：可以提供浏览器访问的程序；</p><p>a.html、b.html.多个web资源，这些web资源可以被外界访问，对外界提供服务；</p><p>你们能访问到的任何一个页面或者资源，都存在于这个世界的某一个角落的计算机上。</p><p>URL</p><p>这个统一的web资源会被放在同一个文件夹下，web应用程序–&gt;Tomcat：服务器 一个web应用由多部分组成 （静态web，动态web)</p><p>css，js jsp，servlet Java程序</p><p>jar包</p><p>配置文件 （Properties)</p><p>web应用程序编写完毕后，若想提供给外界访问：需要一个服务器来统一管理；</p><h2 id="1-3、静态web"><a href="#1-3、静态web" class="headerlink" title="1.3、静态web"></a>1.3、静态web</h2><p>.html    .htm  </p><p>这些都是网页的后缀，如果服务器上一直存在这些东西，我们就可以直接进行读取。通络；</p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331010819035.png" alt="image-20230331010819035"></p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps19.png" alt="img"></p><p>静态web存在的缺点:</p><ol><li>Web页面无法动态更新，所有用户看到都是同一个页面轮播图，点击特效：伪动态</li><li>它无法和数据库交互（数据无法持久化，用户无法交互)</li></ol><h2 id="1-4动态web"><a href="#1-4动态web" class="headerlink" title="1.4动态web"></a>1.4动态web</h2><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331010942106.png" alt="image-20230331010942106"></p><ol><li>JavaScript [实际开发中，它用的最多]</li><li>VBScript</li></ol><p>缺点：</p><ol><li>加入服务器的动态web资源出现了错误，我们需要重新编写我们的<strong>后台程序</strong>,重新发布</li><li>停机维护</li></ol><p>优点：</p><ol><li>Web页面可以动态更新，所有用户看到都不是同一个页面</li><li>它可以与数据库交互 （数据持久化：注册，商品信息，用户信息）</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>JavaWeb</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>sql18MySQL新特性</title>
     <link href="/2023/04/11/sql18MySQL%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     <url>/2023/04/11/sql18MySQL%E6%96%B0%E7%89%B9%E6%80%A7/</url>
