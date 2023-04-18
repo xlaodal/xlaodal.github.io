@@ -12,6 +12,12 @@
     
     
     
+    <tags>
+      
+      <tag>JavaWeb</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -24,6 +30,12 @@
     <content type="html"><![CDATA[]]></content>
     
     
+    
+    <tags>
+      
+      <tag>JavaWeb</tag>
+      
+    </tags>
     
   </entry>
   
@@ -38,6 +50,12 @@
     
     
     
+    <tags>
+      
+      <tag>JavaWeb</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -51,6 +69,12 @@
     
     
     
+    <tags>
+      
+      <tag>JavaWeb</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -63,6 +87,12 @@
     <content type="html"><![CDATA[<p>web服务器</p><p>技术讲解</p><p>微软：国内最早流行的就是ASP</p><p>在HTML中嵌入了VB的脚本， ASP + COM</p><p>在ASP开发中，基本一个页面都有几千行的业务代码，页面极其换乱</p><p>维护成本高</p><p>C# </p><p>IIS</p><p>php</p><p>PHP开发速度很快，功能很强大，跨平台，代码很简单 （70% , WP)</p><p>无法承载大访问量的情况（局限性）</p><h4 id="JSP-x2F-Servlet"><a href="#JSP-x2F-Servlet" class="headerlink" title="JSP&#x2F;Servlet"></a><strong>JSP&#x2F;Servlet</strong></h4><p>B&#x2F;S：浏览和服务器C&#x2F;S: 客户端和服务器</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps27.png" alt="img">sun公司主推的B&#x2F;S架构</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps28.png" alt="img">基于Java语言的 (所有的大公司，或者一些开源的组件，都是用Java写的)</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps29.png" alt="img">可以承载三高问题带来的影响；</p><p><img src="file:///C:\Users\Lenovo\AppData\Local\Temp\ksohtml2084\wps30.png" alt="img">语法像ASP ， ASP–&gt;JSP , 加强市场强度；</p><p>web服务器</p><p>服务器是一种被动的操作，用来处理用户的一些请求和给用户一些响应信息</p><h4 id="IIS"><a href="#IIS" class="headerlink" title="IIS"></a>IIS</h4><p>微软的； ASP…,Windows中自带的</p><p>Tomca</p><p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230331011604104.png" alt="image-20230331011604104"></p><p>Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个Java初学web的人来说，它是最佳的选择</p><p>下载tomcat：</p><ol><li>安装 or 解压</li><li>了解配置文件及目录结构</li><li>这个东西的作用</li></ol>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>JavaWeb</tag>
+      
+    </tags>
     
   </entry>
   
