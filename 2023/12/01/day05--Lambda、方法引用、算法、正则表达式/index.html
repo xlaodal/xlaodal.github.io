@@ -1,0 +1,843 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="华安">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="day05-算法和数据结构一、Arrays类接下来我们学习的类叫做Arrays，其实Arrays并不是重点，但是我们通过Arrays这个类的学习有助于我们理解下一个知识点Lambda的学习。所以我们这里先学习Arrays，再通过Arrays来学习Lamdba这样学习会更丝滑一些^_^. 1.1 Arrays基本使用我们先认识一下Arrays是干什么用的，Arrays是操作数组的工具类，它可以很方便">
+<meta property="og:type" content="article">
+<meta property="og:title" content="萧代">
+<meta property="og:url" content="http://example.com/2023/12/01/day05--Lambda%E3%80%81%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8%E3%80%81%E7%AE%97%E6%B3%95%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:site_name" content="萧代">
+<meta property="og:description" content="day05-算法和数据结构一、Arrays类接下来我们学习的类叫做Arrays，其实Arrays并不是重点，但是我们通过Arrays这个类的学习有助于我们理解下一个知识点Lambda的学习。所以我们这里先学习Arrays，再通过Arrays来学习Lamdba这样学习会更丝滑一些^_^. 1.1 Arrays基本使用我们先认识一下Arrays是干什么用的，Arrays是操作数组的工具类，它可以很方便">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/assets/1667458681721.png">
+<meta property="og:image" content="http://example.com/assets/1667459056681.png">
+<meta property="og:image" content="http://example.com/assets/1667464274934.png">
+<meta property="og:image" content="http://example.com/assets/1667464274934.png">
+<meta property="og:image" content="http://example.com/assets/1667464896645.png">
+<meta property="og:image" content="http://example.com/assets/1667402734025.png">
+<meta property="og:image" content="http://example.com/assets/1667403334232.png">
+<meta property="og:image" content="http://example.com/assets/1667403618904.png">
+<meta property="og:image" content="http://example.com/assets/1667467347586.png">
+<meta property="og:image" content="http://example.com/assets/1667467611576.png">
+<meta property="og:image" content="http://example.com/assets/1667468412882.png">
+<meta property="og:image" content="http://example.com/assets/1667468712516.png">
+<meta property="og:image" content="http://example.com/assets/1667469085970.png">
+<meta property="og:image" content="http://example.com/assets/1667469259345.png">
+<meta property="og:image" content="http://example.com/assets/1667469722842.png">
+<meta property="og:image" content="http://example.com/assets/1667469943451.png">
+<meta property="article:published_time" content="2023-12-01T15:27:45.714Z">
+<meta property="article:modified_time" content="2022-11-03T10:32:02.000Z">
+<meta property="article:author" content="华安">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/1667458681721.png">
+  
+  
+  
+  <title>萧代</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>华安</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/9.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-01 23:27" pubdate>
+          2023年12月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          25k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          207 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="day05-算法和数据结构"><a href="#day05-算法和数据结构" class="headerlink" title="day05-算法和数据结构"></a>day05-算法和数据结构</h1><h2 id="一、Arrays类"><a href="#一、Arrays类" class="headerlink" title="一、Arrays类"></a>一、Arrays类</h2><p>接下来我们学习的类叫做Arrays，其实Arrays并不是重点，但是我们通过Arrays这个类的学习有助于我们理解下一个知识点Lambda的学习。所以我们这里先学习Arrays，再通过Arrays来学习Lamdba这样学习会更丝滑一些^_^.</p>
+<h3 id="1-1-Arrays基本使用"><a href="#1-1-Arrays基本使用" class="headerlink" title="1.1 Arrays基本使用"></a>1.1 Arrays基本使用</h3><p>我们先认识一下Arrays是干什么用的，Arrays是操作数组的工具类，它可以很方便的对数组中的元素进行遍历、拷贝、排序等操作。</p>
+<p>下面我们用代码来演示一下：<strong>遍历、拷贝、排序等操作</strong>。需要用到的方法如下</p>
+<p><img src="/assets/1667458681721.png" srcset="/img/loading.gif" lazyload alt="1667458681721"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 目标：掌握Arrays类的常用方法。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArraysTest1</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 1、public static String toString(类型[] arr): 返回数组的内容</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">50</span>, <span class="hljs-number">60</span>&#125;;<br>        System.out.println(Arrays.toString(arr));<br><br>        <span class="hljs-comment">// 2、public static 类型[] copyOfRange(类型[] arr, 起始索引, 结束索引) ：拷贝数组（指定范围，包前不包后）</span><br>        <span class="hljs-type">int</span>[] arr2 = Arrays.copyOfRange(arr, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>);<br>        System.out.println(Arrays.toString(arr2));<br><br>        <span class="hljs-comment">// 3、public static copyOf(类型[] arr, int newLength)：拷贝数组，可以指定新数组的长度。</span><br>        <span class="hljs-type">int</span>[] arr3 = Arrays.copyOf(arr, <span class="hljs-number">10</span>);<br>        System.out.println(Arrays.toString(arr3));<br><br>        <span class="hljs-comment">// 4、public static setAll(double[] array, IntToDoubleFunction generator)：把数组中的原数据改为新数据又存进去。</span><br>        <span class="hljs-type">double</span>[] prices = &#123;<span class="hljs-number">99.8</span>, <span class="hljs-number">128</span>, <span class="hljs-number">100</span>&#125;;<br>        <span class="hljs-comment">//                  0     1    2</span><br>        <span class="hljs-comment">// 把所有的价格都打八折，然后又存进去。</span><br>        Arrays.setAll(prices, <span class="hljs-keyword">new</span> <span class="hljs-title class_">IntToDoubleFunction</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">applyAsDouble</span><span class="hljs-params">(<span class="hljs-type">int</span> value)</span> &#123;<br>                <span class="hljs-comment">// value = 0  1  2</span><br>                <span class="hljs-keyword">return</span> prices[value] * <span class="hljs-number">0.8</span>;<br>            &#125;<br>        &#125;);<br>        System.out.println(Arrays.toString(prices));<br><br>        <span class="hljs-comment">// 5、public static void sort(类型[] arr)：对数组进行排序(默认是升序排序)</span><br>        Arrays.sort(prices);<br>        System.out.println(Arrays.toString(prices));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-2-Arrays操作对象数组"><a href="#1-2-Arrays操作对象数组" class="headerlink" title="1.2 Arrays操作对象数组"></a>1.2 Arrays操作对象数组</h3><p>刚才我们使用Arrays操作数组时，数组中存储存储的元素是int类型、double类型，是可以直接排序的，而且默认是升序排列。</p>
+<p>如果数组中存储的元素类型是自定义的对象，如何排序呢？接下来，我们就学习一下Arrays如何对对象数组进行排序。</p>
+<p>首先我们要准备一个Student类，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Comparable</span>&lt;Student&gt;&#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> height;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;<br>	<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Student</span><span class="hljs-params">(String name, <span class="hljs-type">double</span> height, <span class="hljs-type">int</span> age)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>        <span class="hljs-built_in">this</span>.height = height;<br>        <span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br><br>	<span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Student&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;name=&#x27;&quot;</span> + name + <span class="hljs-string">&#x27;\&#x27;&#x27;</span> +<br>                <span class="hljs-string">&quot;, height=&quot;</span> + height +<br>                <span class="hljs-string">&quot;, age=&quot;</span> + age +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>然后再写一个测试类，往数组中存储4个学生对象，代码如下。此时，运行代码你会发现是会报错的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArraysTest2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：掌握如何对数组中的对象进行排序。</span><br>        Student[] students = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>[<span class="hljs-number">4</span>];<br>        students[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;蜘蛛精&quot;</span>, <span class="hljs-number">169.5</span>, <span class="hljs-number">23</span>);<br>        students[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">3</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;至尊宝&quot;</span>, <span class="hljs-number">167.5</span>, <span class="hljs-number">24</span>);<br><br>        <span class="hljs-comment">// 1、public static void sort(类型[] arr)：对数组进行排序。</span><br>		Arrays.sort(students);<br>		System.out.println(Arrays.toString(students));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/assets/1667459056681.png" srcset="/img/loading.gif" lazyload alt="1667459056681"></p>
+<p>上面的代码为什么会报错呢？因为Arrays根本就不知道按照什么规则进行排序。为了让Arrays知道按照什么规则排序，我们有如下的两种办法。</p>
+<ul>
+<li><strong>排序方式1：</strong>让Student类实现Comparable接口，同时重写compareTo方法。Arrays的sort方法底层会根据compareTo方法的返回值是正数、负数、还是0来确定谁大、谁小、谁相等。代码如下：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Comparable</span>&lt;Student&gt;&#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> height;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> age;<br>    <br>    <span class="hljs-comment">//...get、set、空参数构造方法、有参数构造方法...自己补全</span><br><br>    <span class="hljs-comment">// 指定比较规则</span><br>    <span class="hljs-comment">// this  o</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compareTo</span><span class="hljs-params">(Student o)</span> &#123;<br>        <span class="hljs-comment">// 约定1：认为左边对象 大于 右边对象 请您返回正整数</span><br>        <span class="hljs-comment">// 约定2：认为左边对象 小于 右边对象 请您返回负整数</span><br>        <span class="hljs-comment">// 约定3：认为左边对象 等于 右边对象 请您一定返回0</span><br>		<span class="hljs-comment">/* if(this.age &gt; o.age)&#123;</span><br><span class="hljs-comment">            return 1;</span><br><span class="hljs-comment">        &#125;else if(this.age &lt; o.age)&#123;</span><br><span class="hljs-comment">            return -1;</span><br><span class="hljs-comment">        &#125;</span><br><span class="hljs-comment">        return 0;*/</span><br><br>        <span class="hljs-comment">//上面的if语句，也可以简化为下面的一行代码</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.age - o.age; <span class="hljs-comment">// 按照年龄升序排列</span><br>        <span class="hljs-comment">// return o.age - this.age; // 按照年龄降序排列</span><br>    &#125;<br>    <br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Student&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;name=&#x27;&quot;</span> + name + <span class="hljs-string">&#x27;\&#x27;&#x27;</span> +<br>                <span class="hljs-string">&quot;, height=&quot;</span> + height +<br>                <span class="hljs-string">&quot;, age=&quot;</span> + age +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>排序方式2：</strong>在调用<code>Arrays.sort(数组,Comparator比较器);</code>时，除了传递数组之外，传递一个Comparator比较器对象。Arrays的sort方法底层会根据Comparator比较器对象的compare方法方法的返回值是正数、负数、还是0来确定谁大、谁小、谁相等。代码如下</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArraysTest2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：掌握如何对数组中的对象进行排序。</span><br>        Student[] students = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>[<span class="hljs-number">4</span>];<br>        students[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;蜘蛛精&quot;</span>, <span class="hljs-number">169.5</span>, <span class="hljs-number">23</span>);<br>        students[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">3</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;至尊宝&quot;</span>, <span class="hljs-number">167.5</span>, <span class="hljs-number">24</span>);<br><br>		<span class="hljs-comment">// 2、public static &lt;T&gt; void sort(T[] arr, Comparator&lt;? super T&gt; c)</span><br>        <span class="hljs-comment">// 参数一：需要排序的数组</span><br>        <span class="hljs-comment">// 参数二：Comparator比较器对象（用来制定对象的比较规则）</span><br>        Arrays.sort(students, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Student&gt;() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Student o1, Student o2)</span> &#123;<br>                <span class="hljs-comment">// 制定比较规则了：左边对象 o1   右边对象 o2</span><br>                <span class="hljs-comment">// 约定1：认为左边对象 大于 右边对象 请您返回正整数</span><br>                <span class="hljs-comment">// 约定2：认为左边对象 小于 右边对象 请您返回负整数</span><br>                <span class="hljs-comment">// 约定3：认为左边对象 等于 右边对象 请您一定返回0</span><br><span class="hljs-comment">//                if(o1.getHeight() &gt; o2.getHeight())&#123;</span><br><span class="hljs-comment">//                    return 1;</span><br><span class="hljs-comment">//                &#125;else if(o1.getHeight() &lt; o2.getHeight())&#123;</span><br><span class="hljs-comment">//                    return -1;</span><br><span class="hljs-comment">//                &#125;</span><br><span class="hljs-comment">//                return 0; // 升序</span><br>                 <span class="hljs-keyword">return</span> Double.compare(o1.getHeight(), o2.getHeight()); <span class="hljs-comment">// 升序</span><br>                <span class="hljs-comment">// return Double.compare(o2.getHeight(), o1.getHeight()); // 降序</span><br>            &#125;<br>        &#125;);<br>        System.out.println(Arrays.toString(students));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、Lambda表达式"><a href="#二、Lambda表达式" class="headerlink" title="二、Lambda表达式"></a>二、Lambda表达式</h2><p>接下来，我们学习一个JDK8新增的一种语法形式，叫做Lambda表达式。<strong>作用：用于简化匿名内部类代码的书写。</strong></p>
+<h3 id="2-1-Lambda表达式基本使用"><a href="#2-1-Lambda表达式基本使用" class="headerlink" title="2.1 Lambda表达式基本使用"></a>2.1 Lambda表达式基本使用</h3><p>怎么去简化呢？Lamdba是有特有的格式的，按照下面的格式来编写Lamdba。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">(被重写方法的形参列表) -&gt; &#123;<br>    被重写方法的方法体代码;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>需要给说明一下的是，在使用Lambda表达式之前，必须先有一个接口，而且接口中只能有一个抽象方法。<strong>（注意：不能是抽象类，只能是接口）</strong></p>
+<p>像这样的接口，我们称之为函数式接口，只有基于函数式接口的匿名内部类才能被Lambda表达式简化。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Swimming</span>&#123;<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">swim</span><span class="hljs-params">()</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>有了以上的Swimming接口之后，接下来才能再演示，使用Lambda表达式，简化匿名内部类书写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LambdaTest1</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：认识Lambda表达式.</span><br>        <span class="hljs-comment">//1.创建一个Swimming接口的匿名内部类对象</span><br>		<span class="hljs-type">Swimming</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Swimming</span>()&#123;<br>             <span class="hljs-meta">@Override</span><br>             <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swim</span><span class="hljs-params">()</span> &#123;<br>                 System.out.println(<span class="hljs-string">&quot;学生快乐的游泳~~~~&quot;</span>);<br>             &#125;<br>         &#125;;<br>         s.swim();<br>		<br>        <span class="hljs-comment">//2.使用Lambda表达式对Swimming接口的匿名内部类进行简化</span><br>        <span class="hljs-type">Swimming</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> () -&gt; &#123;<br>              System.out.println(<span class="hljs-string">&quot;学生快乐的游泳~~~~&quot;</span>);<br>        &#125;;<br>        s1.swim();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>好的，我们现在已经知道Lamdba表达式可以简化基于函数式接口的匿名内部类的书写。接下来，我们可以把刚才使用Arrays方法时的代码，使用Lambda表达式简化一下了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LambdaTest2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：使用Lambda简化函数式接口。</span><br>        <span class="hljs-type">double</span>[] prices = &#123;<span class="hljs-number">99.8</span>, <span class="hljs-number">128</span>, <span class="hljs-number">100</span>&#125;;<br>		<span class="hljs-comment">//1.把所有元素*0.8: 先用匿名内部类写法</span><br>        Arrays.setAll(prices, <span class="hljs-keyword">new</span> <span class="hljs-title class_">IntToDoubleFunction</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">applyAsDouble</span><span class="hljs-params">(<span class="hljs-type">int</span> value)</span> &#123;<br>                <span class="hljs-comment">// value = 0  1  2</span><br>                <span class="hljs-keyword">return</span> prices[value] * <span class="hljs-number">0.8</span>;<br>            &#125;<br>        &#125;);<br>		<span class="hljs-comment">//2.把所有元素*0.8: 改用Lamdba表达式写法</span><br>        Arrays.setAll(prices, (<span class="hljs-type">int</span> value) -&gt; &#123;<br>                <span class="hljs-keyword">return</span> prices[value] * <span class="hljs-number">0.8</span>;<br>        &#125;);<br><br>        System.out.println(Arrays.toString(prices));<br>        System.out.println(<span class="hljs-string">&quot;-----------------------------------------------&quot;</span>);<br>		<br>        Student[] students = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>[<span class="hljs-number">4</span>];<br>        students[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;蜘蛛精&quot;</span>, <span class="hljs-number">169.5</span>, <span class="hljs-number">23</span>);<br>        students[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">3</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;至尊宝&quot;</span>, <span class="hljs-number">167.5</span>, <span class="hljs-number">24</span>);<br>		<span class="hljs-comment">//3.对数组中的元素按照年龄升序排列: 先用匿名内部类写法</span><br>        Arrays.sort(students, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Student&gt;() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Student o1, Student o2)</span> &#123;<br>                <span class="hljs-keyword">return</span> Double.compare(o1.getHeight(), o2.getHeight()); <span class="hljs-comment">// 升序</span><br>            &#125;<br>        &#125;);<br>		<span class="hljs-comment">//4.对数组中的元素按照年龄升序排列: 改用Lambda写法</span><br>        Arrays.sort(students, (Student o1, Student o2) -&gt; &#123;<br>                <span class="hljs-keyword">return</span> Double.compare(o1.getHeight(), o2.getHeight()); <span class="hljs-comment">// 升序</span><br>        &#125;);<br>        System.out.println(Arrays.toString(students));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>好的，各位同学，恭喜大家！到这里，你已经学会了Lambda表达式的基本使用了。</p>
+<h3 id="2-2-Lambda表达式省略规则"><a href="#2-2-Lambda表达式省略规则" class="headerlink" title="2.2 Lambda表达式省略规则"></a>2.2 Lambda表达式省略规则</h3><p>刚才我们学习了Lambda表达式的基本使用。Java觉得代码还不够简单，于是还提供了Lamdba表达式的几种简化写法。具体的简化规则如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>Lambda的标准格式<br>	(参数类型<span class="hljs-number">1</span> 参数名<span class="hljs-number">1</span>, 参数类型<span class="hljs-number">2</span> 参数名<span class="hljs-number">2</span>)-&gt;&#123;<br>		...方法体的代码...<br>		<span class="hljs-keyword">return</span> 返回值;<br>	&#125;<br><br><span class="hljs-number">2.</span>在标准格式的基础上()中的参数类型可以直接省略<br>	(参数名<span class="hljs-number">1</span>, 参数名<span class="hljs-number">2</span>)-&gt;&#123;<br>		...方法体的代码...<br>		<span class="hljs-keyword">return</span> 返回值;<br>	&#125;<br>	<br><span class="hljs-number">3.</span>如果&#123;&#125;总的语句只有一条语句，则&#123;&#125;可以省略、<span class="hljs-keyword">return</span>关键字、以及最后的“;”都可以省略<br>	(参数名<span class="hljs-number">1</span>, 参数名<span class="hljs-number">2</span>)-&gt; 结果<br>	<br><span class="hljs-number">4.</span>如果()里面只有一个参数，则()可以省略<br>	(参数名)-&gt;结果<br></code></pre></td></tr></table></figure>
+
+<p>接下来从匿名内部类开始、到Lambda标准格式、再到Lambda简化格式，一步一步来简化一下。同学们体会一下简化的过程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LambdaTest2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：使用Lambda简化函数式接口。</span><br>        <span class="hljs-type">double</span>[] prices = &#123;<span class="hljs-number">99.8</span>, <span class="hljs-number">128</span>, <span class="hljs-number">100</span>&#125;;<br>		<span class="hljs-comment">//1.对数组中的每一个元素*0.8: 匿名内部类写法</span><br>        Arrays.setAll(prices, <span class="hljs-keyword">new</span> <span class="hljs-title class_">IntToDoubleFunction</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">applyAsDouble</span><span class="hljs-params">(<span class="hljs-type">int</span> value)</span> &#123;<br>                <span class="hljs-comment">// value = 0  1  2</span><br>                <span class="hljs-keyword">return</span> prices[value] * <span class="hljs-number">0.8</span>;<br>            &#125;<br>        &#125;);<br>		<span class="hljs-comment">//2.需求：对数组中的每一个元素*0.8,使用Lambda表达式标准写法</span><br>        Arrays.setAll(prices, (<span class="hljs-type">int</span> value) -&gt; &#123;<br>                <span class="hljs-keyword">return</span> prices[value] * <span class="hljs-number">0.8</span>;<br>        &#125;);<br>		<span class="hljs-comment">//3.使用Lambda表达式简化格式1——省略参数类型</span><br>        Arrays.setAll(prices, (value) -&gt; &#123;<br>            <span class="hljs-keyword">return</span> prices[value] * <span class="hljs-number">0.8</span>;<br>        &#125;);<br>		<span class="hljs-comment">//4.使用Lambda表达式简化格式2——省略()</span><br>        Arrays.setAll(prices, value -&gt; &#123;<br>            <span class="hljs-keyword">return</span> prices[value] * <span class="hljs-number">0.8</span>;<br>        &#125;);<br>        <span class="hljs-comment">//5.使用Lambda表达式简化格式3——省略&#123;&#125;</span><br>        Arrays.setAll(prices, value -&gt; prices[value] * <span class="hljs-number">0.8</span> );<br><br>        System.out.println(Arrays.toString(prices));<br>        <br>        System.out.println(<span class="hljs-string">&quot;------------------------------------</span><br><span class="hljs-string"></span><br><span class="hljs-string">        Student[] students = new Student[4];</span><br><span class="hljs-string">        students[0] = new Student(&quot;</span>蜘蛛精<span class="hljs-string">&quot;, 169.5, 23);</span><br><span class="hljs-string">        students[1] = new Student(&quot;</span>紫霞<span class="hljs-string">&quot;, 163.8, 26);</span><br><span class="hljs-string">        students[2] = new Student(&quot;</span>紫霞<span class="hljs-string">&quot;, 163.8, 26);</span><br><span class="hljs-string">        students[3] = new Student(&quot;</span>至尊宝<span class="hljs-string">&quot;, 167.5, 24);</span><br><span class="hljs-string">		</span><br><span class="hljs-string">        //1.使用匿名内部类</span><br><span class="hljs-string">        Arrays.sort(students, new Comparator&lt;Student&gt;() &#123;</span><br><span class="hljs-string">            @Override</span><br><span class="hljs-string">            public int compare(Student o1, Student o2) &#123;</span><br><span class="hljs-string">                return Double.compare(o1.getHeight(), o2.getHeight()); // 升序</span><br><span class="hljs-string">            &#125;</span><br><span class="hljs-string">        &#125;);</span><br><span class="hljs-string">		//2.使用Lambda表达式表达式——标准格式</span><br><span class="hljs-string">        Arrays.sort(students, (Student o1, Student o2) -&gt; &#123;</span><br><span class="hljs-string">                return Double.compare(o1.getHeight(), o2.getHeight()); // 升序</span><br><span class="hljs-string">        &#125;);</span><br><span class="hljs-string">		//3.使用Lambda表达式表达式——省略参数类型</span><br><span class="hljs-string">        Arrays.sort(students, ( o1,  o2) -&gt; &#123;</span><br><span class="hljs-string">            return Double.compare(o1.getHeight(), o2.getHeight()); // 升序</span><br><span class="hljs-string">        &#125;);</span><br><span class="hljs-string">		//4.使用Lambda表达式表达式——省略&#123;&#125;</span><br><span class="hljs-string">        Arrays.sort(students, ( o1,  o2) -&gt; Double.compare(o1.getHeight(), o2.getHeight()));</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">        System.out.println(Arrays.toString(students));</span><br><span class="hljs-string">    &#125;</span><br><span class="hljs-string">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>到这里，恭喜你，对Lamdba表达式的所有写法，就学习完毕了。</p>
+<h2 id="三、JDK8新特性（方法引用）"><a href="#三、JDK8新特性（方法引用）" class="headerlink" title="三、JDK8新特性（方法引用）"></a>三、JDK8新特性（方法引用）</h2><p>各位小伙伴，接下来我们学习JDK8的另一个新特性，叫做方法引用。我们知道Lambda是用来简化匿名代码的书写格式的，而方法引用是用来进一步简化Lambda表达式的，它简化的更加过分。</p>
+<p>到这里有小伙伴可能就想慰问Java爸爸了：“之前的代码挺好的呀！好不容易学会，你又来搞这些，把我都搞晕了。“    说句大实话，确实有这样的问题，学习新的东西肯定会增加我们的学习成本，从心理上来说多少是有写抗拒的。但是从另一个角度想，一旦我们学会了，会大大简化我们的代码书写，提高我们编写代码的效率，而且这些新的语法都是有前提条件的，遇到的时候就简化得了。再退一步想，就算你没有学会，还是用以前的办法一点问题也没有。</p>
+<p>给大家交代清楚了，学习方法引用可能存在的一些心理特点之后，接下来我们再正式学习方法引用的代码怎么编写。</p>
+<h3 id="3-1-静态方法引用"><a href="#3-1-静态方法引用" class="headerlink" title="3.1 静态方法引用"></a>3.1 静态方法引用</h3><p>我们先学习静态方法的引用，还是用之前Arrays代码来做演示。现在准备好下面的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test1</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Student[] students = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>[<span class="hljs-number">4</span>];<br>        students[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;蜘蛛精&quot;</span>, <span class="hljs-number">169.5</span>, <span class="hljs-number">23</span>);<br>        students[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;紫霞&quot;</span>, <span class="hljs-number">163.8</span>, <span class="hljs-number">26</span>);<br>        students[<span class="hljs-number">3</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;至尊宝&quot;</span>, <span class="hljs-number">167.5</span>, <span class="hljs-number">24</span>);<br><br>        <span class="hljs-comment">// 原始写法：对数组中的学生对象，按照年龄升序排序</span><br>        Arrays.sort(students, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Student&gt;() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Student o1, Student o2)</span> &#123;<br>                <span class="hljs-keyword">return</span> o1.getAge() - o2.getAge(); <span class="hljs-comment">// 按照年龄升序排序</span><br>            &#125;<br>        &#125;);<br><br>        <span class="hljs-comment">// 使用Lambda简化后的形式</span><br>        Arrays.sort(students, (o1, o2) -&gt; o1.getAge() - o2.getAge());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在，我想要把下图中Lambda表达式的方法体，用一个静态方法代替</p>
+<p><img src="/assets/1667464274934.png" srcset="/img/loading.gif" lazyload alt="1667464274934"></p>
+<p>准备另外一个类CompareByData类，用于封装Lambda表达式的方法体代码；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CompareByData</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compareByAge</span><span class="hljs-params">(Student o1, Student o2)</span>&#123;<br>        <span class="hljs-keyword">return</span> o1.getAge() - o2.getAge(); <span class="hljs-comment">// 升序排序的规则</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在我们就可以把Lambda表达式的方法体代码，改为下面的样子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Arrays.sort(students, (o1, o2) -&gt; CompareByData.compareByAge(o1, o2));<br></code></pre></td></tr></table></figure>
+
+<p>Java为了简化上面Lambda表达式的写法，利用方法引用可以改进为下面的样子。<strong>实际上就是用类名调用方法，但是把参数给省略了。</strong>这就是静态方法引用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//静态方法引用：类名::方法名</span><br>Arrays.sort(students, CompareByData::compareByAge);<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-实例方法引用"><a href="#3-2-实例方法引用" class="headerlink" title="3.2 实例方法引用"></a>3.2 实例方法引用</h3><p>还是基于上面的案例，我们现在来学习一下实例方法的引用。现在，我想要把下图中Lambda表达式的方法体，用一个实例方法代替。</p>
+<p><img src="/assets/1667464274934.png" srcset="/img/loading.gif" lazyload alt="1667464274934"></p>
+<p>在CompareByData类中，再添加一个实例方法，用于封装Lambda表达式的方法体</p>
+<p><img src="/assets/1667464896645.png" srcset="/img/loading.gif" lazyload alt="1667464896645"></p>
+<p>接下来，我们把Lambda表达式的方法体，改用对象调用方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">CompareByData</span> <span class="hljs-variable">compare</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CompareByData</span>();<br>Arrays.sort(students, (o1, o2) -&gt; compare.compareByAgeDesc(o1, o2)); <span class="hljs-comment">// 降序</span><br></code></pre></td></tr></table></figure>
+
+<p>最后，再将Lambda表达式的方法体，直接改成方法引用写法。<strong>实际上就是用类名调用方法，但是省略的参数</strong>。这就是实例方法引用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">CompareByData</span> <span class="hljs-variable">compare</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CompareByData</span>();<br>Arrays.sort(students, compare::compareByAgeDesc); <span class="hljs-comment">// 降序</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>给小伙伴的寄语：一定要按照老师写的步骤，一步一步来做，你一定能学会的！！！ </p>
+</blockquote>
+<h3 id="3-2-特定类型的方法引用"><a href="#3-2-特定类型的方法引用" class="headerlink" title="3.2 特定类型的方法引用"></a>3.2 特定类型的方法引用</h3><p>各位小伙伴，我们继续学习特定类型的方法引用。在学习之前还是需要给大家说明一下，这种特定类型的方法引用是没有什么道理的，只是语法的一种约定，遇到这种场景，就可以这样用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">Java约定：<br>    如果某个Lambda表达式里只是调用一个实例方法，并且前面参数列表中的第一个参数作为方法的主调，	后面的所有参数都是作为该实例方法的入参时，则就可以使用特定类型的方法引用。<br>格式：<br>	类型::方法名<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        String[] names = &#123;<span class="hljs-string">&quot;boby&quot;</span>, <span class="hljs-string">&quot;angela&quot;</span>, <span class="hljs-string">&quot;Andy&quot;</span> ,<span class="hljs-string">&quot;dlei&quot;</span>, <span class="hljs-string">&quot;caocao&quot;</span>, <span class="hljs-string">&quot;Babo&quot;</span>, <span class="hljs-string">&quot;jack&quot;</span>, <span class="hljs-string">&quot;Cici&quot;</span>&#125;;<br>        <br>        <span class="hljs-comment">// 要求忽略首字符大小写进行排序。</span><br>        Arrays.sort(names, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;String&gt;() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(String o1, String o2)</span> &#123;<br>                <span class="hljs-comment">// 制定比较规则。o1 = &quot;Andy&quot;  o2 = &quot;angela&quot;</span><br>                <span class="hljs-keyword">return</span> o1.compareToIgnoreCase(o2);<br>            &#125;<br>        &#125;);<br>		<br>        <span class="hljs-comment">//lambda表达式写法</span><br>        Arrays.sort(names, ( o1,  o2) -&gt; o1.compareToIgnoreCase(o2) );<br>        <span class="hljs-comment">//特定类型的方法引用！</span><br>        Arrays.sort(names, String::compareToIgnoreCase);<br><br>        System.out.println(Arrays.toString(names));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-3-构造器引用"><a href="#3-3-构造器引用" class="headerlink" title="3.3 构造器引用"></a>3.3 构造器引用</h3><p>各位小伙伴，我们学习最后一种方法引用的形式，叫做构造器引用。还是先说明一下，构造器引用在实际开发中应用的并不多，目前还没有找到构造器的应用场景。所以大家在学习的时候，也只是关注语法就可以了。</p>
+<p>现在，我们准备一个JavaBean类，Car类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> &#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> price;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">()</span> &#123;<br><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String name, <span class="hljs-type">double</span> price)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>        <span class="hljs-built_in">this</span>.price = price;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> name;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setName</span><span class="hljs-params">(String name)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getPrice</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> price;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setPrice</span><span class="hljs-params">(<span class="hljs-type">double</span> price)</span> &#123;<br>        <span class="hljs-built_in">this</span>.price = price;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Car&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;name=&#x27;&quot;</span> + name + <span class="hljs-string">&#x27;\&#x27;&#x27;</span> +<br>                <span class="hljs-string">&quot;, price=&quot;</span> + price +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>因为方法引用是基于Lamdba表达式简化的，所以也要按照Lamdba表达式的使用前提来用，需要一个函数式接口，接口中代码的返回值类型是Car类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">CreateCar</span>&#123;<br>    Car <span class="hljs-title function_">create</span><span class="hljs-params">(String name, <span class="hljs-type">double</span> price)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>最后，再准备一个测试类，在测试类中创建CreateCar接口的实现类对象，先用匿名内部类创建、再用Lambda表达式创建，最后改用方法引用创建。同学们只关注格式就可以，不要去想为什么（语法就是这么设计的）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test3</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 1、创建这个接口的匿名内部类对象。</span><br>        <span class="hljs-type">CreateCar</span> <span class="hljs-variable">cc1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CreateCar</span>()&#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> Car <span class="hljs-title function_">create</span><span class="hljs-params">(String name, <span class="hljs-type">double</span> price)</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(name, price);<br>            &#125;<br>        &#125;;<br>		<span class="hljs-comment">//2、使用匿名内部类改进</span><br>        <span class="hljs-type">CreateCar</span> <span class="hljs-variable">cc2</span> <span class="hljs-operator">=</span> (name,  price) -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(name, price);<br><br>        <span class="hljs-comment">//3、使用方法引用改进：构造器引用</span><br>        <span class="hljs-type">CreateCar</span> <span class="hljs-variable">cc3</span> <span class="hljs-operator">=</span> Car::<span class="hljs-keyword">new</span>;<br>        <br>        <span class="hljs-comment">//注意：以上是创建CreateCar接口实现类对象的几种形式而已，语法一步一步简化。</span><br>        <br>        <span class="hljs-comment">//4、对象调用方法</span><br>        <span class="hljs-type">Car</span> <span class="hljs-variable">car</span> <span class="hljs-operator">=</span> cc3.create(<span class="hljs-string">&quot;奔驰&quot;</span>, <span class="hljs-number">49.9</span>);<br>        System.out.println(car);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="四、常见算法"><a href="#四、常见算法" class="headerlink" title="四、常见算法"></a>四、常见算法</h2><h3 id="1-1-认识算法"><a href="#1-1-认识算法" class="headerlink" title="1.1 认识算法"></a>1.1 认识算法</h3><p>接下来，我们认识一下什么是算法。算法其实是解决某个实际问题的过程和方法。比如百度地图给你规划路径，计算最优路径的过程就需要用到算法。再比如你在抖音上刷视频时，它会根据你的喜好给你推荐你喜欢看的视频，这里也需要用到算法。</p>
+<p>我们为什么要学习算法呢？主要目的是训练我们的编程思维，还有就是面试的时候，面试官也喜欢问一下算法的问题来考察你的技术水平。最后一点，学习算法是成为一个高级程序员的必经之路。</p>
+<p>当然我们现在并不会学习非常复杂的算法，万丈高楼平地起，我们现在只需要学习几种常见的基础算法就可以了。而且Java语言本身就内置了一些基础算法给我们使用，实际上自己也不会去写这些算法。</p>
+<p><img src="/assets/1667402734025.png" srcset="/img/loading.gif" lazyload alt="1667402734025"></p>
+<h3 id="1-2-冒泡排序"><a href="#1-2-冒泡排序" class="headerlink" title="1.2 冒泡排序"></a>1.2 冒泡排序</h3><p>接下来，我们学习一种算法叫排序算法，它可以价格无序的整数，排列成从小到大的形式（升序），或者从大到小的形式（降序）</p>
+<p>排序算法有很多种，我们这里只学习比较简单的两种，一种是冒泡排序，一种是选择排序。学习算法我们先要搞清楚算法的流程，然后再去“推敲“如何写代码。（<strong>注意，我这里用的次是推敲，也就是说算法这样的代码并不是一次成型的，是需要反复修改才能写好的</strong>）。</p>
+<p><img src="/assets/1667403334232.png" srcset="/img/loading.gif" lazyload alt="1667403334232"></p>
+<p>先来学习冒泡排序，先来介绍一下，冒泡排序的流程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">冒泡排序核心思路：每次将相邻的两个元素继续比较<br>如下图所示：<br>   第一轮比较 <span class="hljs-number">3</span>次<br>   第二轮比较 <span class="hljs-number">2</span>次<br>   第三轮比较 <span class="hljs-number">1</span>次<br></code></pre></td></tr></table></figure>
+
+<p><img src="/assets/1667403618904.png" srcset="/img/loading.gif" lazyload alt="1667403618904"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test1</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 1、准备一个数组</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>&#125;;<br><br>        <span class="hljs-comment">// 2、定义一个循环控制排几轮</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length - <span class="hljs-number">1</span>; i++) &#123;<br>            <span class="hljs-comment">// i = 0  1  2           【5， 2， 3， 1】    次数</span><br>            <span class="hljs-comment">// i = 0 第一轮            0   1   2         3</span><br>            <span class="hljs-comment">// i = 1 第二轮            0   1             2</span><br>            <span class="hljs-comment">// i = 2 第三轮            0                 1</span><br><br>            <span class="hljs-comment">// 3、定义一个循环控制每轮比较几次。</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; arr.length - i - <span class="hljs-number">1</span>; j++) &#123;<br>                <span class="hljs-comment">// 判断当前位置的元素值，是否大于后一个位置处的元素值，如果大则交换。</span><br>                <span class="hljs-keyword">if</span>(arr[j] &gt; arr[j+<span class="hljs-number">1</span>])&#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[j + <span class="hljs-number">1</span>];<br>                    arr[j + <span class="hljs-number">1</span>] = arr[j];<br>                    arr[j] = temp;<br>                &#125;<br>            &#125;<br>        &#125;<br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-2-选择排序"><a href="#1-2-选择排序" class="headerlink" title="1.2 选择排序"></a>1.2 选择排序</h3><p>刚才我们学习了冒泡排序，接下来我们学习了另一种排序方法，叫做选择排序。按照我们刚才给大家介绍的算法的学习方式。先要搞清楚算法的流程，再去推敲代码怎么写。</p>
+<p>所以我们先分析选择排序算法的流程：选择排序的核心思路是，每一轮选定一个固定的元素，和其他的每一个元素进行比较；经过几轮比较之后，每一个元素都能比较到了。</p>
+<p><img src="/assets/1667467347586.png" srcset="/img/loading.gif" lazyload alt="1667467347586"></p>
+<p>接下来，按照选择排序的流程编写代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java">ublic <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 1、准备好一个数组</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>&#125;;<br>        <span class="hljs-comment">//           0  1  2  3</span><br><br>        <span class="hljs-comment">// 2、控制选择几轮</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length - <span class="hljs-number">1</span>; i++) &#123;<br>            <span class="hljs-comment">// i = 0 第一轮    j = 1 2 3</span><br>            <span class="hljs-comment">// i = 1 第二轮    j = 2 3</span><br>            <span class="hljs-comment">// i = 2 第三轮    j = 3</span><br>            <span class="hljs-comment">// 3、控制每轮选择几次。</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i + <span class="hljs-number">1</span>; j &lt; arr.length; j++) &#123;<br>                <span class="hljs-comment">// 判断当前位置是否大于后面位置处的元素值，若大于则交换。</span><br>                <span class="hljs-keyword">if</span>(arr[i] &gt; arr[j])&#123;<br>                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> arr[i];<br>                    arr[i] = arr[j];<br>                    arr[j] = temp;<br>                &#125;<br>            &#125;<br>        &#125;<br>        System.out.println(Arrays.toString(arr));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="1-3-查找算法"><a href="#1-3-查找算法" class="headerlink" title="1.3 查找算法"></a>1.3 查找算法</h3><p>接下来，我们学习一个查找算法叫做二分查找。在学习二分查找之前，我们先来说一下基本查找，从基本查找的弊端，我们再引入二分查找，这样我们的学习也会更加丝滑一下。</p>
+<p><strong>先聊一聊基本查找：</strong>假设我们要查找的元素是81，如果是基本查找的话，只能从0索引开始一个一个往后找，但是如果元素比较多，你要查找的元素比较靠后的话，这样查找的此处就比较多。性能比较差。</p>
+<p><img src="/assets/1667467611576.png" srcset="/img/loading.gif" lazyload alt="1667467611576"></p>
+<p><strong>再讲二分查找</strong>：二分查找的主要特点是，每次查找能排除一般元素，这样效率明显提高。<strong>但是二分查找要求比较苛刻，它要求元素必须是有序的，否则不能进行二分查找。</strong></p>
+<ul>
+<li>二分查找的核心思路</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">第<span class="hljs-number">1</span>步：先定义两个变量，分别记录开始索引(left)和结束索引(right)<br>第<span class="hljs-number">2</span>步：计算中间位置的索引，mid = (left+right)/<span class="hljs-number">2</span>;<br>第<span class="hljs-number">3</span>步：每次查找中间mid位置的元素，和目标元素key进行比较<br>		如果中间位置元素比目标元素小，那就说明mid前面的元素都比目标元素小<br>			此时：left = mid+<span class="hljs-number">1</span><br>    	如果中间位置元素比目标元素大，那说明mid后面的元素都比目标元素大<br>    		此时：right = mid-<span class="hljs-number">1</span><br>		如果中间位置元素和目标元素相等，那说明mid就是我们要找的位置<br>			此时：把mid返回		<br>注意：一搬查找一次肯定是不够的，所以需要把第<span class="hljs-number">1</span>步和第<span class="hljs-number">2</span>步循环来做，只到left&gt;end就结束，如果最后还没有找到目标元素，就返回-<span class="hljs-number">1.</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/assets/1667468412882.png" srcset="/img/loading.gif" lazyload alt="1667468412882"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 目标：掌握二分查找算法。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test3</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 1、准备好一个数组。</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">7</span>, <span class="hljs-number">23</span>, <span class="hljs-number">79</span>, <span class="hljs-number">81</span>, <span class="hljs-number">103</span>, <span class="hljs-number">127</span>, <span class="hljs-number">131</span>, <span class="hljs-number">147</span>&#125;;<br><br>        System.out.println(binarySearch(arr, <span class="hljs-number">150</span>));<br><br>        System.out.println(Arrays.binarySearch(arr, <span class="hljs-number">81</span>));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">binarySearch</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> data)</span>&#123;<br>        <span class="hljs-comment">// 1、定义两个变量，一个站在左边位置，一个站在右边位置</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> arr.length - <span class="hljs-number">1</span>;<br><br>        <span class="hljs-comment">// 2、定义一个循环控制折半。</span><br>        <span class="hljs-keyword">while</span> (left &lt;= right)&#123;<br>            <span class="hljs-comment">// 3、每次折半，都算出中间位置处的索引</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">middle</span> <span class="hljs-operator">=</span> (left + right) / <span class="hljs-number">2</span>;<br>            <span class="hljs-comment">// 4、判断当前要找的元素值，与中间位置处的元素值的大小情况。</span><br>            <span class="hljs-keyword">if</span>(data &lt; arr[middle])&#123;<br>                <span class="hljs-comment">// 往左边找，截止位置（右边位置） = 中间位置 - 1</span><br>                right = middle - <span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(data &gt; arr[middle])&#123;<br>                <span class="hljs-comment">// 往右边找，起始位置（左边位置） = 中间位置 + 1</span><br>                left = middle + <span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">// 中间位置处的元素值，正好等于我们要找的元素值</span><br>                <span class="hljs-keyword">return</span> middle;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">// -1特殊结果，就代表没有找到数据！数组中不存在该数据！</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="五、正则表达式"><a href="#五、正则表达式" class="headerlink" title="五、正则表达式"></a>五、正则表达式</h2><p>接下来，我们学习一个全新的知识，叫做正则表达式。<strong>正则表达式其实是由一些特殊的符号组成的，它代表的是某种规则。</strong></p>
+<blockquote>
+<p>正则表达式的作用1：用来校验字符串数据是否合法</p>
+<p>正则表达式的作用2：可以从一段文本中查找满足要求的内容</p>
+</blockquote>
+<p><img src="/assets/1667468712516.png" srcset="/img/loading.gif" lazyload alt="1667468712516"></p>
+<h3 id="5-1-正则表达式初体验"><a href="#5-1-正则表达式初体验" class="headerlink" title="5.1 正则表达式初体验"></a>5.1 正则表达式初体验</h3><p>现在，我们就以QQ号码为例，来体验一下正则表达式的用法。注意：现在仅仅只是体验而已，我们还没有讲正则表达式的具体写法。</p>
+<ul>
+<li>不使用正则表达式，校验QQ号码代码是这样的</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">checkQQ</span><span class="hljs-params">(String qq)</span>&#123;<br>        <span class="hljs-comment">// 1、判断qq号码是否为null</span><br>        <span class="hljs-keyword">if</span>(qq == <span class="hljs-literal">null</span> || qq.startsWith(<span class="hljs-string">&quot;0&quot;</span>) || qq.length() &lt; <span class="hljs-number">6</span> || qq.length() &gt; <span class="hljs-number">20</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// 2、qq至少是不是null,不是以0开头的，满足6-20之间的长度。</span><br>        <span class="hljs-comment">// 判断qq号码中是否都是数字。</span><br>        <span class="hljs-comment">// qq = 2514ghd234</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; qq.length(); i++) &#123;<br>            <span class="hljs-comment">// 根据索引提取当前位置处的字符。</span><br>            <span class="hljs-type">char</span> <span class="hljs-variable">ch</span> <span class="hljs-operator">=</span> qq.charAt(i);<br>            <span class="hljs-comment">// 判断ch记住的字符，如果不是数字，qq号码不合法。</span><br>            <span class="hljs-keyword">if</span>(ch &lt; <span class="hljs-string">&#x27;0&#x27;</span> || ch &gt; <span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 3、说明qq号码肯定是合法</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>用正则表达式代码是这样的</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">checkQQ1</span><span class="hljs-params">(String qq)</span>&#123;<br>    <span class="hljs-keyword">return</span> qq != <span class="hljs-literal">null</span> &amp;&amp; qq.matches(<span class="hljs-string">&quot;[1-9]\\d&#123;5,19&#125;&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们发现，使用正则表达式，大大简化的了代码的写法。这个代码现在不用写，体验到正则表达式的优势就可以了。</p>
+<h3 id="5-2-正则表达式书写规则"><a href="#5-2-正则表达式书写规则" class="headerlink" title="5.2 正则表达式书写规则"></a>5.2 正则表达式书写规则</h3><p>前面我们已经体验到了正则表达式，可以简化校验数据的代码书写。这里需要用到一个方法叫<code>matches(String regex)</code>。这个方法时属于String类的方法。</p>
+<p><img src="/assets/1667469085970.png" srcset="/img/loading.gif" lazyload alt="1667469085970"></p>
+<p>这个方法是用来匹配一个字符串是否匹配正则表达式的规则，参数需要调用者传递一个正则表达式。但是正则表达式不能乱写，是有特定的规则的。</p>
+<p>下面我们就学习一下，正则表达式的规则。从哪里学呢？在API中有一个类叫做Pattern，我们可以到API文档中搜索，关于正则表达式的规则，这个类都告诉我们了。我这里把常用的已经给大家整理好了。</p>
+<p><img src="/assets/1667469259345.png" srcset="/img/loading.gif" lazyload alt="1667469259345"></p>
+<p>我们将这些规则，在代码中演示一下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 目标：掌握正则表达式的书写规则</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RegexTest2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 1、字符类(只能匹配单个字符)</span><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;[abc]&quot;</span>));    <span class="hljs-comment">// [abc]只能匹配a、b、c</span><br>        System.out.println(<span class="hljs-string">&quot;e&quot;</span>.matches(<span class="hljs-string">&quot;[abcd]&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;d&quot;</span>.matches(<span class="hljs-string">&quot;[^abc]&quot;</span>));   <span class="hljs-comment">// [^abc] 不能是abc</span><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;[^abc]&quot;</span>));  <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;b&quot;</span>.matches(<span class="hljs-string">&quot;[a-zA-Z]&quot;</span>)); <span class="hljs-comment">// [a-zA-Z] 只能是a-z A-Z的字符</span><br>        System.out.println(<span class="hljs-string">&quot;2&quot;</span>.matches(<span class="hljs-string">&quot;[a-zA-Z]&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;k&quot;</span>.matches(<span class="hljs-string">&quot;[a-z&amp;&amp;[^bc]]&quot;</span>)); <span class="hljs-comment">// ： a到z，除了b和c</span><br>        System.out.println(<span class="hljs-string">&quot;b&quot;</span>.matches(<span class="hljs-string">&quot;[a-z&amp;&amp;[^bc]]&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;ab&quot;</span>.matches(<span class="hljs-string">&quot;[a-zA-Z0-9]&quot;</span>)); <span class="hljs-comment">// false 注意：以上带 [内容] 的规则都只能用于匹配单个字符</span><br><br>        <span class="hljs-comment">// 2、预定义字符(只能匹配单个字符)  .  \d  \D   \s  \S  \w  \W</span><br>        System.out.println(<span class="hljs-string">&quot;徐&quot;</span>.matches(<span class="hljs-string">&quot;.&quot;</span>)); <span class="hljs-comment">// .可以匹配任意字符</span><br>        System.out.println(<span class="hljs-string">&quot;徐徐&quot;</span>.matches(<span class="hljs-string">&quot;.&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        <span class="hljs-comment">// \转义</span><br>        System.out.println(<span class="hljs-string">&quot;\&quot;&quot;</span>);<br>        <span class="hljs-comment">// \n \t</span><br>        System.out.println(<span class="hljs-string">&quot;3&quot;</span>.matches(<span class="hljs-string">&quot;\\d&quot;</span>));  <span class="hljs-comment">// \d: 0-9</span><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;\\d&quot;</span>));  <span class="hljs-comment">//false</span><br><br>        System.out.println(<span class="hljs-string">&quot; &quot;</span>.matches(<span class="hljs-string">&quot;\\s&quot;</span>));   <span class="hljs-comment">// \s: 代表一个空白字符</span><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;\s&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;\\S&quot;</span>));  <span class="hljs-comment">// \S: 代表一个非空白字符</span><br>        System.out.println(<span class="hljs-string">&quot; &quot;</span>.matches(<span class="hljs-string">&quot;\\S&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;\\w&quot;</span>));  <span class="hljs-comment">// \w: [a-zA-Z_0-9]</span><br>        System.out.println(<span class="hljs-string">&quot;_&quot;</span>.matches(<span class="hljs-string">&quot;\\w&quot;</span>)); <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;徐&quot;</span>.matches(<span class="hljs-string">&quot;\\w&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;徐&quot;</span>.matches(<span class="hljs-string">&quot;\\W&quot;</span>));  <span class="hljs-comment">// [^\w]不能是a-zA-Z_0-9</span><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;\\W&quot;</span>));  <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;23232&quot;</span>.matches(<span class="hljs-string">&quot;\\d&quot;</span>)); <span class="hljs-comment">// false 注意：以上预定义字符都只能匹配单个字符。</span><br><br>        <span class="hljs-comment">// 3、数量词： ?   *   +   &#123;n&#125;   &#123;n, &#125;  &#123;n, m&#125;</span><br>        System.out.println(<span class="hljs-string">&quot;a&quot;</span>.matches(<span class="hljs-string">&quot;\\w?&quot;</span>));   <span class="hljs-comment">// ? 代表0次或1次</span><br>        System.out.println(<span class="hljs-string">&quot;&quot;</span>.matches(<span class="hljs-string">&quot;\\w?&quot;</span>));    <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;abc&quot;</span>.matches(<span class="hljs-string">&quot;\\w?&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;abc12&quot;</span>.matches(<span class="hljs-string">&quot;\\w*&quot;</span>));   <span class="hljs-comment">// * 代表0次或多次</span><br>        System.out.println(<span class="hljs-string">&quot;&quot;</span>.matches(<span class="hljs-string">&quot;\\w*&quot;</span>));        <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;abc12张&quot;</span>.matches(<span class="hljs-string">&quot;\\w*&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;abc12&quot;</span>.matches(<span class="hljs-string">&quot;\\w+&quot;</span>));   <span class="hljs-comment">// + 代表1次或多次</span><br>        System.out.println(<span class="hljs-string">&quot;&quot;</span>.matches(<span class="hljs-string">&quot;\\w+&quot;</span>));       <span class="hljs-comment">// false</span><br>        System.out.println(<span class="hljs-string">&quot;abc12张&quot;</span>.matches(<span class="hljs-string">&quot;\\w+&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        System.out.println(<span class="hljs-string">&quot;a3c&quot;</span>.matches(<span class="hljs-string">&quot;\\w&#123;3&#125;&quot;</span>));   <span class="hljs-comment">// &#123;3&#125; 代表要正好是n次</span><br>        System.out.println(<span class="hljs-string">&quot;abcd&quot;</span>.matches(<span class="hljs-string">&quot;\\w&#123;3&#125;&quot;</span>));  <span class="hljs-comment">// false</span><br>        System.out.println(<span class="hljs-string">&quot;abcd&quot;</span>.matches(<span class="hljs-string">&quot;\\w&#123;3,&#125;&quot;</span>));     <span class="hljs-comment">// &#123;3,&#125; 代表是&gt;=3次</span><br>        System.out.println(<span class="hljs-string">&quot;ab&quot;</span>.matches(<span class="hljs-string">&quot;\\w&#123;3,&#125;&quot;</span>));     <span class="hljs-comment">// false</span><br>        System.out.println(<span class="hljs-string">&quot;abcde徐&quot;</span>.matches(<span class="hljs-string">&quot;\\w&#123;3,&#125;&quot;</span>));     <span class="hljs-comment">// false</span><br>        System.out.println(<span class="hljs-string">&quot;abc232d&quot;</span>.matches(<span class="hljs-string">&quot;\\w&#123;3,9&#125;&quot;</span>));     <span class="hljs-comment">// &#123;3, 9&#125; 代表是  大于等于3次，小于等于9次</span><br><br>        <span class="hljs-comment">// 4、其他几个常用的符号：(?i)忽略大小写 、 或：| 、  分组：()</span><br>        System.out.println(<span class="hljs-string">&quot;abc&quot;</span>.matches(<span class="hljs-string">&quot;(?i)abc&quot;</span>)); <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;ABC&quot;</span>.matches(<span class="hljs-string">&quot;(?i)abc&quot;</span>)); <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;aBc&quot;</span>.matches(<span class="hljs-string">&quot;a((?i)b)c&quot;</span>)); <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;ABc&quot;</span>.matches(<span class="hljs-string">&quot;a((?i)b)c&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        <span class="hljs-comment">// 需求1：要求要么是3个小写字母，要么是3个数字。</span><br>        System.out.println(<span class="hljs-string">&quot;abc&quot;</span>.matches(<span class="hljs-string">&quot;[a-z]&#123;3&#125;|\\d&#123;3&#125;&quot;</span>)); <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;ABC&quot;</span>.matches(<span class="hljs-string">&quot;[a-z]&#123;3&#125;|\\d&#123;3&#125;&quot;</span>)); <span class="hljs-comment">// false</span><br>        System.out.println(<span class="hljs-string">&quot;123&quot;</span>.matches(<span class="hljs-string">&quot;[a-z]&#123;3&#125;|\\d&#123;3&#125;&quot;</span>)); <span class="hljs-comment">// true</span><br>        System.out.println(<span class="hljs-string">&quot;A12&quot;</span>.matches(<span class="hljs-string">&quot;[a-z]&#123;3&#125;|\\d&#123;3&#125;&quot;</span>)); <span class="hljs-comment">// false</span><br><br>        <span class="hljs-comment">// 需求2：必须是”我爱“开头，中间可以是至少一个”编程“，最后至少是1个”666“</span><br>        System.out.println(<span class="hljs-string">&quot;我爱编程编程666666&quot;</span>.matches(<span class="hljs-string">&quot;我爱(编程)+(666)+&quot;</span>));<br>        System.out.println(<span class="hljs-string">&quot;我爱编程编程66666&quot;</span>.matches(<span class="hljs-string">&quot;我爱(编程)+(666)+&quot;</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-3-正则表达式应用案例"><a href="#5-3-正则表达式应用案例" class="headerlink" title="5.3 正则表达式应用案例"></a>5.3 正则表达式应用案例</h3><p>学习完正则表达式的规则之后，接下来我们再利用正则表达式，去校验几个实际案例。</p>
+<ul>
+<li>正则表达式校验手机号码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 目标：校验用户输入的电话、邮箱、时间是否合法。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RegexTest3</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        checkPhone();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">checkPhone</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>            System.out.println(<span class="hljs-string">&quot;请您输入您的电话号码(手机|座机): &quot;</span>);<br>            <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">phone</span> <span class="hljs-operator">=</span> sc.nextLine();<br>            <span class="hljs-comment">// 18676769999  010-3424242424 0104644535</span><br>            <span class="hljs-keyword">if</span>(phone.matches(<span class="hljs-string">&quot;(1[3-9]\\d&#123;9&#125;)|(0\\d&#123;2,7&#125;-?[1-9]\\d&#123;4,19&#125;)&quot;</span>))&#123;<br>                System.out.println(<span class="hljs-string">&quot;您输入的号码格式正确~~~&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                System.out.println(<span class="hljs-string">&quot;您输入的号码格式不正确~~~&quot;</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>使用正则表达式校验邮箱是否正确</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RegexTest3</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        checkEmail();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">checkEmail</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>            System.out.println(<span class="hljs-string">&quot;请您输入您的邮箱： &quot;</span>);<br>            <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">email</span> <span class="hljs-operator">=</span> sc.nextLine();<br>            <span class="hljs-comment">/**</span><br><span class="hljs-comment">             * dlei0009@163.com</span><br><span class="hljs-comment">             * 25143242@qq.com</span><br><span class="hljs-comment">             * itheima@itcast.com.cn</span><br><span class="hljs-comment">             */</span><br>            <span class="hljs-keyword">if</span>(email.matches(<span class="hljs-string">&quot;\\w&#123;2,&#125;@\\w&#123;2,20&#125;(\\.\\w&#123;2,10&#125;)&#123;1,2&#125;&quot;</span>))&#123;<br>                System.out.println(<span class="hljs-string">&quot;您输入的邮箱格式正确~~~&quot;</span>);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                System.out.println(<span class="hljs-string">&quot;您输入的邮箱格式不正确~~~&quot;</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-4-正则表达式信息爬取"><a href="#5-4-正则表达式信息爬取" class="headerlink" title="5.4 正则表达式信息爬取"></a>5.4 正则表达式信息爬取</h3><p>各位小伙伴，在前面的课程中，我们学习了正则表达式的作用之一，用来校验数据格式的正确性。接下来我们学习<strong>正则表达式的第二个作用：在一段文本中查找满足要求的内容</strong></p>
+<p>我们还是通过一个案例给大家做演示：案例需求如下</p>
+<p><img src="/assets/1667469722842.png" srcset="/img/loading.gif" lazyload alt="1667469722842"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 目标：掌握使用正则表达式查找内容。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RegexTest4</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        method1();<br>    &#125;<br><br>    <span class="hljs-comment">// 需求1：从以下内容中爬取出，手机，邮箱，座机、400电话等信息。</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method1</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">data</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot; 来黑马程序员学习Java，\n&quot;</span> +<br>                <span class="hljs-string">&quot;        电话：1866668888，18699997777\n&quot;</span> +<br>                <span class="hljs-string">&quot;        或者联系邮箱：boniu@itcast.cn，\n&quot;</span> +<br>                <span class="hljs-string">&quot;        座机电话：01036517895，010-98951256\n&quot;</span> +<br>                <span class="hljs-string">&quot;        邮箱：bozai@itcast.cn，\n&quot;</span> +<br>                <span class="hljs-string">&quot;        邮箱：dlei0009@163.com，\n&quot;</span> +<br>                <span class="hljs-string">&quot;        热线电话：400-618-9090 ，400-618-4000，4006184000，4006189090&quot;</span>;<br>        <span class="hljs-comment">// 1、定义爬取规则</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">regex</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;(1[3-9]\\d&#123;9&#125;)|(0\\d&#123;2,7&#125;-?[1-9]\\d&#123;4,19&#125;)|(\\w&#123;2,&#125;@\\w&#123;2,20&#125;(\\.\\w&#123;2,10&#125;)&#123;1,2&#125;)&quot;</span><br>                + <span class="hljs-string">&quot;|(400-?\\d&#123;3,7&#125;-?\\d&#123;3,7&#125;)&quot;</span>;<br>        <span class="hljs-comment">// 2、把正则表达式封装成一个Pattern对象</span><br>        <span class="hljs-type">Pattern</span> <span class="hljs-variable">pattern</span> <span class="hljs-operator">=</span> Pattern.compile(regex);<br>        <span class="hljs-comment">// 3、通过pattern对象去获取查找内容的匹配器对象。</span><br>        <span class="hljs-type">Matcher</span> <span class="hljs-variable">matcher</span> <span class="hljs-operator">=</span> pattern.matcher(data);<br>        <span class="hljs-comment">// 4、定义一个循环开始爬取信息</span><br>        <span class="hljs-keyword">while</span> (matcher.find())&#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> matcher.group(); <span class="hljs-comment">// 获取到了找到的内容了。</span><br>            System.out.println(rs);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-5-正则表达式搜索、替换"><a href="#5-5-正则表达式搜索、替换" class="headerlink" title="5.5 正则表达式搜索、替换"></a>5.5 正则表达式搜索、替换</h3><p>接下来，我们学习一下正则表达式的另外两个功能，替换、分割的功能。需要注意的是这几个功能需要用到Stirng类中的方法。这两个方法其实我们之前学过，只是当时没有学正则表达式而已。</p>
+<p><img src="/assets/1667469943451.png" srcset="/img/loading.gif" lazyload alt="1667469943451"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 目标：掌握使用正则表达式做搜索替换，内容分割。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RegexTest5</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 1、public String replaceAll(String regex , String newStr)：按照正则表达式匹配的内容进行替换</span><br>        <span class="hljs-comment">// 需求1：请把下面字符串中的不是汉字的部分替换为 “-”</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;古力娜扎ai8888迪丽热巴999aa5566马尔扎哈fbbfsfs42425卡尔扎巴&quot;</span>;<br>        System.out.println(s1.replaceAll(<span class="hljs-string">&quot;\\w+&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>));<br>        <br>        <span class="hljs-comment">// 需求2(拓展)：某语音系统，收到一个口吃的人说的“我我我喜欢编编编编编编编编编编编编程程程！”，需要优化成“我喜欢编程！”。</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;我我我喜欢编编编编编编编编编编编编程程程&quot;</span>;<br>        System.out.println(s2.replaceAll(<span class="hljs-string">&quot;(.)\\1+&quot;</span>, <span class="hljs-string">&quot;$1&quot;</span>));<br><br>        <span class="hljs-comment">// 2、public String[] split(String regex)：按照正则表达式匹配的内容进行分割字符串，反回一个字符串数组。</span><br>        <span class="hljs-comment">// 需求1：请把下面字符串中的人名取出来，使用切割来做</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">s3</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;古力娜扎ai8888迪丽热巴999aa5566马尔扎哈fbbfsfs42425卡尔扎巴&quot;</span>;<br>        String[] names = s3.split(<span class="hljs-string">&quot;\\w+&quot;</span>);<br>        System.out.println(Arrays.toString(names));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://example.com/2023/12/01/day05--Lambda、方法引用、算法、正则表达式/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>华安</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年11月3日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/12/01/day06--%E9%9B%86%E5%90%88%E8%BF%9B%E9%98%B6%EF%BC%881%EF%BC%89/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/01/day04--%E5%B8%B8%E7%94%A8API/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

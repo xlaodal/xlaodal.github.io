@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="华安">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="day06——Java编程案例（专题）各位同学，前面我们已经学习过很多Java的基础知识了，主要有变量、数组、运算符、流程控制、方法等。但是对于这些知识点的运用，掌握得还不是很熟练，所以今天我们专门花一天时间，给同学们讲几个专项练习题，把前面所学习的知识巩固一下。 同时通过这些专项练习题，积攒大家的代码量，以便提升大家的编程能力和编程思维。这里所说的编程思维就是使用Java技术解决问题的思维方式；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="萧代">
+<meta property="og:url" content="http://example.com/2023/12/01/day06-Java%E7%BC%96%E7%A8%8B%E6%A1%88%E4%BE%8B%EF%BC%88%E4%B8%93%E9%A2%98%EF%BC%89/index.html">
+<meta property="og:site_name" content="萧代">
+<meta property="og:description" content="day06——Java编程案例（专题）各位同学，前面我们已经学习过很多Java的基础知识了，主要有变量、数组、运算符、流程控制、方法等。但是对于这些知识点的运用，掌握得还不是很熟练，所以今天我们专门花一天时间，给同学们讲几个专项练习题，把前面所学习的知识巩固一下。 同时通过这些专项练习题，积攒大家的代码量，以便提升大家的编程能力和编程思维。这里所说的编程思维就是使用Java技术解决问题的思维方式；">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/assets/1661995636689.png">
+<meta property="og:image" content="http://example.com/assets/1661996140214.png">
+<meta property="og:image" content="http://example.com/assets/1661996187012.png">
+<meta property="og:image" content="http://example.com/assets/1661996204673.png">
+<meta property="og:image" content="http://example.com/assets/1661996239984.png">
+<meta property="og:image" content="http://example.com/assets/1661996258614.png">
+<meta property="og:image" content="http://example.com/assets/1661996292796.png">
+<meta property="og:image" content="http://example.com/assets/1662022389872.png">
+<meta property="og:image" content="http://example.com/assets/1661996325454.png">
+<meta property="og:image" content="http://example.com/assets/1661996916834.png">
+<meta property="og:image" content="http://example.com/assets/1662026373775.png">
+<meta property="og:image" content="http://example.com/assets/1662026388626.png">
+<meta property="og:image" content="http://example.com/assets/1662026410363.png">
+<meta property="article:published_time" content="2023-12-01T15:24:40.985Z">
+<meta property="article:modified_time" content="2022-09-10T07:28:46.740Z">
+<meta property="article:author" content="华安">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/1661995636689.png">
+  
+  
+  
+  <title>萧代</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>华安</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/9.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-01 23:24" pubdate>
+          2023年12月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          16k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          130 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="day06——Java编程案例（专题）"><a href="#day06——Java编程案例（专题）" class="headerlink" title="day06——Java编程案例（专题）"></a>day06——Java编程案例（专题）</h1><p>各位同学，前面我们已经学习过很多Java的基础知识了，主要有<strong>变量、数组、运算符、流程控制、方法等</strong>。但是对于这些知识点的运用，掌握得还不是很熟练，所以今天我们专门花一天时间，给同学们讲几个专项练习题，把前面所学习的知识巩固一下。</p>
+<p>同时通过这些专项练习题，<strong>积攒大家的代码量，以便提升大家的编程能力和编程思维</strong>。这里所说的编程思维就是使用Java技术解决问题的思维方式；编程能力就是按照编程思维编写代码的能力。</p>
+<p>想要提升编程思维和编程能力，在这里给同学们一些学习上的建议：</p>
+<ul>
+<li>编程思维、编程能力不是一朝一夕形成的，需要大量思考，练习和时间的沉淀。</li>
+<li>具体措施：前期，建议先模仿；后期，自然就能创新了；<br>勤于练习代码，勤于思考，孰能生巧。</li>
+</ul>
+<p>中国的航空母舰、战斗机，这些技术都是先模仿，再创新的，而且的模仿的周期是非常长的。所以同学们在使用Java技术解决问题时，也是先模仿一些特定问题的解决思路，以后遇到同类型的问题，就采用同一种思维模式来做就行。</p>
+<p><img src="/assets/1661995636689.png" srcset="/img/loading.gif" lazyload alt="1661995636689"></p>
+<h2 id="案例一：买飞机票"><a href="#案例一：买飞机票" class="headerlink" title="案例一：买飞机票"></a>案例一：买飞机票</h2><p>各位同学，我们先来学习第一个案例《飞机买票》，先仔细阅读一下案例需求</p>
+<p><img src="/assets/1661996140214.png" srcset="/img/loading.gif" lazyload alt="1661996140214"></p>
+<p>我们来分析一下，这个需求该如何实现。前面我跟同学们讲过，将来我们去做一些需求，都是一个一个方法来实现的，所以在这里我们也采用方法来编写。</p>
+<p>这个方法如何编写呢？采用下面的方式来思考</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	阅读需求我们会发现，不同月份、不同原价、不同舱位类型优惠方案都不一样；<br>	所以，可以将原价、月份、舱位类型写成参数<br>	<br><span class="hljs-number">2.</span>接着，考虑方法是否有返回值？<br>	阅读需求我们发现，最终结果是求当前用户的优惠票价<br>	所以，可以将优惠票价作为方法的返回值。<br>	<br><span class="hljs-number">3.</span>最后，再考虑方法内部的业务逻辑<br>	先使用<span class="hljs-keyword">if</span>判断月份是旺季还是淡季，然后使用<span class="hljs-keyword">switch</span>分支判断是头等舱还是经济舱，计算		票价<br></code></pre></td></tr></table></figure>
+
+<p>代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test1</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成买飞机票的案例。</span><br>        <span class="hljs-type">double</span> <span class="hljs-variable">price</span> <span class="hljs-operator">=</span> calculate(<span class="hljs-number">1000</span>, <span class="hljs-number">11</span>, <span class="hljs-string">&quot;头等舱&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;优惠价是：&quot;</span> + price);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> price,<span class="hljs-type">int</span> month,String type)</span>&#123;<br>        <span class="hljs-comment">// 1、判断当前月份是淡季还是旺季</span><br>        <span class="hljs-keyword">if</span>(month &gt;= <span class="hljs-number">5</span> &amp;&amp; month &lt;= <span class="hljs-number">10</span>) &#123;<br>            <span class="hljs-comment">// 旺季</span><br>            <span class="hljs-comment">// 2、判断仓位类型。</span><br>            <span class="hljs-keyword">switch</span> (type)&#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;头等舱&quot;</span>:<br>                    price *= <span class="hljs-number">0.9</span>; <span class="hljs-comment">// price = price * 0.9;</span><br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;经济舱&quot;</span>:<br>                    price *= <span class="hljs-number">0.85</span>;<br>                    <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 淡季</span><br>            <span class="hljs-keyword">switch</span> (type)&#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;头等舱&quot;</span>:<br>                    price *= <span class="hljs-number">0.7</span>; <span class="hljs-comment">// price = price * 0.7;</span><br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;经济舱&quot;</span>:<br>                    price *= <span class="hljs-number">0.65</span>;<br>                    <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> price;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例二：开发验证码"><a href="#案例二：开发验证码" class="headerlink" title="案例二：开发验证码"></a>案例二：开发验证码</h2><p>各位同学，接下来，我们学习第二个案例《开发验证码》，同样先阅读一下案例需求</p>
+<p><img src="/assets/1661996187012.png" srcset="/img/loading.gif" lazyload alt="1661996187012"></p>
+<p>分析一下，需求是要我们开发一个程序，生成指定位数的验证码。考虑到实际工作中生成验证码的功能很多地方都会用到，为了提高代码的复用性，我们还是把生成验证码的功能写成方法比较好。</p>
+<p>那生成验证码的方法该怎么写呢？按照下面的三个步骤进行思考</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	要求生成指定位数的验证码，到底多少位呢？让调用者传递即可<br>	所以，需要一个参数，用来表示验证码的位数<br><br><span class="hljs-number">2.</span>接着，考虑方法是否需要有返回值？<br>	该方法的结果，就是为了得到验证码<br>	所以，返回值就是验证码；<br><br><span class="hljs-number">3.</span>最后，再考虑方法内部的业务逻辑<br>	<span class="hljs-number">1</span>)先按照方法接收的验证码位数n,循环n次<br>	<span class="hljs-number">2</span>)每次循环，产生一个字符，可以是数字字符、或者大小写字母字符<br>	<span class="hljs-number">3</span>)定义一个String类型的变量用于记住产生的每位随机字符<br></code></pre></td></tr></table></figure>
+
+<p>按照思路，编写代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成生成随机验证码。</span><br>        System.out.println(createCode(<span class="hljs-number">8</span>));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">createCode</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>        <span class="hljs-comment">//1)先按照方法接收的验证码位数n,循环n次</span><br>        <span class="hljs-type">Random</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>        <span class="hljs-comment">//3)定义一个String类型的变量用于记住产生的每位随机字符</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">code</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-comment">// i = 1 2 3 4 5</span><br>            <span class="hljs-comment">//2)每次循环，产生一个字符，可以是数字字符、或者大小写字母字符</span><br>            <span class="hljs-comment">// 思路：随机一个0 1 2之间的数字出来，0代表随机一个数字字符，1、2代表随机大写字母，小写字母。</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">type</span> <span class="hljs-operator">=</span> r.nextInt(<span class="hljs-number">3</span>); <span class="hljs-comment">// 0 1 2</span><br>            <span class="hljs-keyword">switch</span> (type) &#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:<br>                    <span class="hljs-comment">// 随机一个数字字符</span><br>                    code += r.nextInt(<span class="hljs-number">10</span>); <span class="hljs-comment">// 0 - 9  code = code + 8</span><br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>                    <span class="hljs-comment">// 随机一个大写字符 A 65   Z 65+25    (0 - 25) + 65</span><br>                    <span class="hljs-type">char</span> <span class="hljs-variable">ch1</span> <span class="hljs-operator">=</span> (<span class="hljs-type">char</span>) (r.nextInt(<span class="hljs-number">26</span>) + <span class="hljs-number">65</span>);<br>                    code += ch1;<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>                    <span class="hljs-comment">// 随机一个小写字符 a 97   z 97+25    (0 - 25) + 97</span><br>                    <span class="hljs-type">char</span> <span class="hljs-variable">ch2</span> <span class="hljs-operator">=</span> (<span class="hljs-type">char</span>) (r.nextInt(<span class="hljs-number">26</span>) + <span class="hljs-number">97</span>);<br>                    code += ch2;<br>                    <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> code;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例三：评委打分"><a href="#案例三：评委打分" class="headerlink" title="案例三：评委打分"></a>案例三：评委打分</h2><p>各位同学，接下来，我们学习第三个案例《评委打分》，同样先阅读一下案例需求</p>
+<p><img src="/assets/1661996204673.png" srcset="/img/loading.gif" lazyload alt="1661996204673">我们把上面的需求还是用方法来编写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据来处理？<br>	需求中说，有多个评委的打分，但是到底多少个评委呢？ 可以由调用者传递<br>	所以，我们可以把评委的个数写成参数；<br><br><span class="hljs-number">2.</span>接着，考虑方法是否需要有返回值？<br>	需求中，想要的最终结果是平均分<br>	所以，返回值就是平均分；<br><br><span class="hljs-number">3.</span>最后，再考虑方法内部的业务逻辑<br>	<span class="hljs-number">1</span>)假设评委的个位为n个，那么就需要n个评委的分数，首先可以新建一个长度为n的数组，		用来存储每一个评委的分数<br>	<br>	<span class="hljs-number">2</span>)循环n次，使用Scanner键盘录入n个<span class="hljs-number">1</span>~<span class="hljs-number">100</span>范围内的整数，并把整数存储到数组中<br>	<br>	<span class="hljs-number">3</span>)求数组中元素的总和、最大值、最小值<br>	<br>	<span class="hljs-number">4</span>)最后再计算平均值； 平均值 = (和-最大值-最小值)/(数组.length-<span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
+
+<p>代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test3</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成评委打分案例。</span><br>        System.out.println(<span class="hljs-string">&quot;当前选手得分是：&quot;</span> + getAverageScore(<span class="hljs-number">6</span>));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getAverageScore</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>        <span class="hljs-comment">// 1、定义一个动态初始化的数组，负责后期存入评委的打分</span><br>        <span class="hljs-type">int</span>[] scores = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n]; <span class="hljs-comment">// 6</span><br>        <span class="hljs-comment">// scores = [0, 0, 0, 0, 0, 0]</span><br><br>        <span class="hljs-comment">// 2、遍历数组的每个位置，依次录入评委的分数</span><br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; scores.length; i++) &#123;<br>            <span class="hljs-comment">// i = 0 1 2 3 4 5</span><br>            System.out.println(<span class="hljs-string">&quot;请您录入第&quot;</span>+ (i + <span class="hljs-number">1</span>) +<span class="hljs-string">&quot;个评委的分数：&quot;</span>);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> sc.nextInt();<br>            scores[i] = score;<br>        &#125;<br><br>        <span class="hljs-comment">// 3、从数组中计算出总分，找出最高分，最低分。</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 求总分用的变量</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> scores[<span class="hljs-number">0</span>]; <span class="hljs-comment">// 求最大值的</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> scores[<span class="hljs-number">0</span>]; <span class="hljs-comment">// 求最小值的。</span><br><br>        <span class="hljs-comment">// 遍历数组找出这些数据的。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; scores.length; i++) &#123;<br>            <span class="hljs-comment">// i = 0 1 2 3 4 5</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> scores[i];<br>            <span class="hljs-comment">// 求和</span><br>            sum += score;<br>            <span class="hljs-comment">// 求最大值</span><br>            <span class="hljs-keyword">if</span>(score &gt; max)&#123;<br>                max = score;<br>            &#125;<br>            <span class="hljs-comment">// 求最小值</span><br>            <span class="hljs-keyword">if</span>(score &lt; min)&#123;<br>                min = score;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 4、计算出平均分并返回</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1.0</span> * (sum - min - max) / (number - <span class="hljs-number">2</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例四：数字加密"><a href="#案例四：数字加密" class="headerlink" title="案例四：数字加密"></a>案例四：数字加密</h2><p>各位同学，接下来我们学习第四个案例《数字加密》，我们还是先阅读一下案例需求</p>
+<p><img src="/assets/1661996239984.png" srcset="/img/loading.gif" lazyload alt="1661996239984"></p>
+<p>仔细阅读需求后发现，简答来说该需求要做的事情，就是把一个4位数的整数，经过一系列的加密运算（至于怎么运算，待会再详细分析），得到一个新的整数。</p>
+<p>我们还是把这个需求用方法来实现，按照下面的思维模式进行分析</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	需要一个<span class="hljs-number">4</span>位数，至于是哪一个数，让方法的调用者传递。<br>	所以，方法的参数，就是这个需要加密的四位数<br><br><span class="hljs-number">2.</span>接着，考虑方法是否需要有返回值？<br>	方法最终的结果是一个加密后的数据<br>	所以，返回值就表示为加密后的数据。<br><br><span class="hljs-number">3.</span>最后，再考虑方法内部的业务逻辑，这里的业务逻辑就是那一系列的加密运算<br>	<span class="hljs-number">1</span>)先要把<span class="hljs-number">4</span>位数整数拆分为，<span class="hljs-number">4</span>个数字，用一个数组保存起来<br>	<span class="hljs-number">2</span>)再将数组中的每一个元素加<span class="hljs-number">5</span>，再对<span class="hljs-number">10</span>取余<br>	<span class="hljs-number">3</span>)最后将数组中的元素反转，<br>	<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test4</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成数字加密程序的开发。</span><br>        System.out.println(<span class="hljs-string">&quot;加密后的结果是：&quot;</span> + encrypt(<span class="hljs-number">8346</span>));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">encrypt</span><span class="hljs-params">(<span class="hljs-type">int</span> number)</span>&#123;<br>        <span class="hljs-comment">// number = 1983</span><br>        <span class="hljs-comment">// 1、把这个密码拆分成一个一个的数字，才可以对其进行加密啊。</span><br>        <span class="hljs-type">int</span>[] numbers = split(number);<br>        <span class="hljs-comment">// numbers = [1, 9, 8, 3]</span><br><br>        <span class="hljs-comment">// 2、遍历这个数组中的每个数字，对其进行加密处理。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; numbers.length; i++) &#123;<br>            <span class="hljs-comment">// i = 0 1 2 3</span><br>            numbers[i] = (numbers[i] + <span class="hljs-number">5</span>) % <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-comment">// numbers = [6, 4, 3, 8]</span><br><br>        <span class="hljs-comment">// 3、对数组反转，把对数组进行反转的操作交给一个独立的方法来完成</span><br>        reverse(numbers);<br>        <span class="hljs-comment">// numbers = [8, 3, 4, 6]</span><br><br>        <span class="hljs-comment">// 4、把这些加密的数字拼接起来做为加密后的结果返回即可。</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">data</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; numbers.length; i++) &#123;<br>            data += numbers[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> data;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reverse</span><span class="hljs-params">(<span class="hljs-type">int</span>[] numbers)</span> &#123;<br>        <span class="hljs-comment">// 反转数组的</span><br>        <span class="hljs-comment">// numbers = [6, 4, 3, 8]</span><br>        <span class="hljs-comment">//            i        j</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = numbers.length - <span class="hljs-number">1</span>; i &lt; j; i++,j--) &#123;<br>            <span class="hljs-comment">// 交换i和j位置处的值。</span><br>            <span class="hljs-comment">// 1、把后一个位置处的值交给一个临时变量先存起来</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> numbers[j];<br>            <span class="hljs-comment">// 2、把前一个位置处的值赋值给后一个位置处</span><br>            numbers[j] = numbers[i];<br>            <span class="hljs-comment">// 3、把后一个位置处原来的值（由临时变量记住着）赋值给前一个位置</span><br>            numbers[i] = temp;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] split(<span class="hljs-type">int</span> number) &#123;<br>        <span class="hljs-comment">// number = 1983</span><br>        <span class="hljs-type">int</span>[] numbers = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">4</span>];<br>        numbers[<span class="hljs-number">0</span>] = number / <span class="hljs-number">1000</span>;<br>        numbers[<span class="hljs-number">1</span>] = (number / <span class="hljs-number">100</span>) % <span class="hljs-number">10</span>;<br>        numbers[<span class="hljs-number">2</span>] = (number / <span class="hljs-number">10</span>) % <span class="hljs-number">10</span>;<br>        numbers[<span class="hljs-number">3</span>] = number % <span class="hljs-number">10</span>;<br>        <span class="hljs-keyword">return</span> numbers;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例五：数组拷贝"><a href="#案例五：数组拷贝" class="headerlink" title="案例五：数组拷贝"></a>案例五：数组拷贝</h2><p>各位同学，接下来我们学习第五个案例《数组拷贝》，我们还是先阅读一下案例需求</p>
+<p><img src="/assets/1661996258614.png" srcset="/img/loading.gif" lazyload alt="1661996258614"></p>
+<p>仔细阅读需求发现，想要实现的效果就是：给定一个数组，然后经过我们编写的程序，得到一个和原数组一模一样的数组。</p>
+<p>我们也采用一个方法来编写，按照下面的思维模式来思考</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	该方法的目的是拷贝数组，拷贝哪一个数组呢？ 需要调用者传递<br>	所以，参数应该是一个数组<br><br><span class="hljs-number">2.</span>接着，考虑方法是否需要有返回值？<br>	该方法最终想要得到一个新数组<br>	所以，返回值是拷贝得到的新数组<br><br><span class="hljs-number">3.</span>最后，考虑方法内部的业务逻辑？<br>	<span class="hljs-number">1</span>)创建一个新的数组，新数组的长度和元素数组一样<br>	<span class="hljs-number">2</span>)遍历原数组，将原数组中的元素赋值给新数组<br>	<span class="hljs-number">3</span>)最终将新数组返回<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test5</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：掌握数组拷贝。</span><br>        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">11</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>&#125;;<br>        <span class="hljs-type">int</span>[] arr2 = copy(arr);<br>        printArray(arr2);<br><br>        <span class="hljs-comment">// 注意：这个不是拷贝数组，叫把数组变量赋值给另一个数组变量。</span><br>        <span class="hljs-comment">//        int[] arr3 = arr;</span><br>        <span class="hljs-comment">//        arr3[1] = 666;</span><br>        <span class="hljs-comment">//        System.out.println(arr[1]);</span><br><br>        arr2[<span class="hljs-number">1</span>] = <span class="hljs-number">666</span>;<br>        System.out.println(arr[<span class="hljs-number">1</span>]);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] copy(<span class="hljs-type">int</span>[] arr)&#123;<br>        <span class="hljs-comment">// arr = [11, 22, 33]</span><br>        <span class="hljs-comment">//        0    1   2</span><br><br>        <span class="hljs-comment">// 1、创建一个长度一样的整型数组出来。</span><br>        <span class="hljs-type">int</span>[] arr2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[arr.length];<br>        <span class="hljs-comment">// arr2 = [0, 0, 0]</span><br>        <span class="hljs-comment">//         0  1  2</span><br><br>        <span class="hljs-comment">// 2、把原数组的元素值对应位置赋值给新数组。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;<br>            <span class="hljs-comment">// i = 0 1 2</span><br>            arr2[i] = arr[i];<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> arr2;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printArray</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span>&#123;<br>        System.out.print(<span class="hljs-string">&quot;[&quot;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;<br>            System.out.print(i==arr.length-<span class="hljs-number">1</span> ? arr[i] : arr[i] + <span class="hljs-string">&quot;, &quot;</span>);<br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;]&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例六：抢红包"><a href="#案例六：抢红包" class="headerlink" title="案例六：抢红包"></a>案例六：抢红包</h2><p>各位同学，接下来我们学习第六个案例《抢红包》，我们还是先阅读一下案例需求</p>
+<p><img src="/assets/1661996292796.png" srcset="/img/loading.gif" lazyload alt="1661996292796"></p>
+<p><img src="/assets/1662022389872.png" srcset="/img/loading.gif" lazyload alt="1662022389872"></p>
+<p>我们还是把这个案例用一个方法来编写，同样按照下面的模式来分析</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	需要接收<span class="hljs-number">5</span>个红包，至于是哪<span class="hljs-number">5</span>个红包，可以有调用者传递；把<span class="hljs-number">5</span>个红包的数值，用数组来存	 储。<br>	所以，参数就是一个数组<br>	<br><span class="hljs-number">2.</span>接着，考虑方法是否需要有返回值？<br>	按照需求的效果，抢完红包就直接打印了，不需要返回值<br><br><span class="hljs-number">3.</span>最后，考虑方法内部的业务逻辑是怎么的？<br>	思考：红包实际上是数组中的元素，抢红包实际上随机获取数组中的元素；而且一个红包只能抢一次，怎么做呢？我们可以把数组中获取到元素的位置，置为<span class="hljs-number">0</span>,下次再或者这个位置的元素一判断为<span class="hljs-number">0</span>，再重新获取新的元素，依次内推，直到把数组中所有的元素都获取完。<br>	<br>	我们我们把抽红包的思路再整理一下：<br>		<span class="hljs-number">1</span>)首先，写一个循环，循环次数为数组的长度<br>		<span class="hljs-number">2</span>)每次循环，键盘录入，提示<span class="hljs-string">&quot;用户录入任意键抽奖：&quot;</span><br>    	<span class="hljs-number">3</span>)随机从数组中产生一个索引，获取索引位置的元素，这个元素就表示抽的红包<br>			如果值不为<span class="hljs-number">0</span>，则打印如：<span class="hljs-string">&quot;恭喜您，您抽中了520元&quot;</span>,把这个位置元素置为<span class="hljs-number">0</span><br>    		如果值为<span class="hljs-number">0</span>，则说明这个红包被抽过，重新循环到第<span class="hljs-number">2</span>步，重新抽奖<br>    		【注意：如果当前这一次没有抽中，这一次抽奖机会被浪费掉了，我们可以把控				制循环的次数自减一下】	<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test6</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] moneys = &#123;<span class="hljs-number">100</span>,<span class="hljs-number">999</span>,<span class="hljs-number">50</span>,<span class="hljs-number">520</span>,<span class="hljs-number">1314</span>&#125;;<br>        start(moneys);<br>    &#125;<br>    <span class="hljs-comment">//开始抽奖</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">(<span class="hljs-type">int</span>[] moneys)</span>&#123;<br>        <span class="hljs-comment">//1)首先，写一个循环，循环次数为数组的长度</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; moneys.length; i++) &#123;<br>            <span class="hljs-comment">//2)每次循环，键盘录入，提示&quot;用户录入任意键抽奖：&quot;</span><br>            <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)&#123;<br>                <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>                System.out.print(<span class="hljs-string">&quot;用户录入任意键抽奖：&quot;</span>);<br>                <span class="hljs-type">String</span> <span class="hljs-variable">msg</span> <span class="hljs-operator">=</span> sc.next();<br>                <span class="hljs-comment">//3)随机从数组中产生一个索引，获取索引位置的元素，这个元素就表示抽的红包</span><br>                <span class="hljs-type">Random</span> <span class="hljs-variable">r</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>                <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> r.nextInt(moneys.length);<br>                <span class="hljs-type">int</span> <span class="hljs-variable">money</span> <span class="hljs-operator">=</span> moneys[index];<br>                <span class="hljs-keyword">if</span>(money!=<span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-comment">//如果值不为0，则打印如：&quot;恭喜您，您抽中了520元&quot;</span><br>                    System.out.println(<span class="hljs-string">&quot;恭喜您，您抽中了&quot;</span>+money+<span class="hljs-string">&quot;元&quot;</span>);<br>                    moneys[index] = <span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-comment">//如果值为0，则说明这个红包被抽过，重新循环到第2步，重新抽奖</span><br>                    <span class="hljs-comment">//此时这一次抽奖机会被浪费掉了，可以把控制循环的次数自减一下</span><br>                    i--;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="案例七：找素数"><a href="#案例七：找素数" class="headerlink" title="案例七：找素数"></a>案例七：找素数</h2><p>各位同学，接下来我们学习第七个案例《找素数》，我们还是先阅读一下案例需求</p>
+<p><img src="/assets/1661996325454.png" srcset="/img/loading.gif" lazyload alt="1661996325454"></p>
+<p>首先我们得统一认识一下什么是素数：<strong>只能被1和本身整除的数是素数</strong>，比如：3、7是素数，9,21不是素数（因为9可以被3整除，21可以被3和7整除）</p>
+<p>再思考题目需求该怎么做？<strong>打印输出101~200之间的素数，并求有多少个？</strong>，我们也是把这个需求写成一个方法，还是按照三个步骤分析方法如何编写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	该方法是求一个范围内的素数，一个范围需要两个数据来确定，比如：<span class="hljs-number">101</span>~<span class="hljs-number">200</span><br>	所以，方法需要两个参数来接收范围的开始值start，和范围的结束值end<br>	<br><span class="hljs-number">2.</span>接着，考虑方法是否需要返回值？<br>	该方法需要求一个范围内的素数的个数<br>	所以，返回值就是素数的个数<br><br><span class="hljs-number">3.</span>最后，考虑方法内部的业务逻辑<br>	思考：怎么判断一个数是素数呢？要仅仅抓住，素数的要求:“只能被<span class="hljs-number">1</span>和本身整除的数是素数”。我们可以从反向思考，如果这个数只要能被除了<span class="hljs-number">1</span>和本身以外的数整除，那么这个数就不是素数。<br>	<span class="hljs-comment">//比如1：判断9是否为素数</span><br>	<span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> <span class="hljs-number">9</span>;<br>	<span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">//规定flag等于true表示num是素数；否则表示num不是素数</span><br>	<span class="hljs-comment">//如果这个数num只要能被除了1和本身以外的数整除，那么这个数就不是素数。</span><br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">2</span>; j&lt;<span class="hljs-number">9</span>-<span class="hljs-number">1</span>; j++)&#123;<br>        <span class="hljs-comment">//当j=3时，num%j == 9%3 == 0; </span><br>		<span class="hljs-keyword">if</span>(num%j==<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-comment">//说明num=9; 表示一个素数。把flag改为false; </span><br>            flag = <span class="hljs-literal">false</span>;<br>		&#125;<br>	&#125;<br><br>	把上面的代码循环执行，每次循环然后把num换成start~end之间的整数即可。<br></code></pre></td></tr></table></figure>
+
+<p>编写代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test7</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成找素数。</span><br>        System.out.println(<span class="hljs-string">&quot;当前素数的个数是：&quot;</span> + search(<span class="hljs-number">101</span>, <span class="hljs-number">200</span>));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">search</span><span class="hljs-params">(<span class="hljs-type">int</span> start, <span class="hljs-type">int</span> end)</span>&#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// start = 101   end = 200</span><br>        <span class="hljs-comment">// 1、定义一个for循环找到101到200之间的每个数据</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> start; i &lt;= end ; i++) &#123;<br>            <span class="hljs-comment">// i = 101 102 103 ... 199 200</span><br><br>            <span class="hljs-comment">// 信号位思想</span><br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// 假设的意思：默认当前i记住的数据是素数。</span><br>            <span class="hljs-comment">// 2、判断当前i记住的这个数据是否是素数。</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; j &lt;= i / <span class="hljs-number">2</span>; j++) &#123;<br>                <span class="hljs-keyword">if</span>(i % j == <span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-comment">// i当前记住的这个数据不是素数了</span><br>                    flag = <span class="hljs-literal">false</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-comment">// 3、根据判定的结果决定是否输出i当前记住的数据：是素数才输出展示。</span><br>            <span class="hljs-keyword">if</span>(flag)&#123;<br>                System.out.println(i);<br>                count++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="案例八：模拟双色球-拓展案例"><a href="#案例八：模拟双色球-拓展案例" class="headerlink" title="案例八：模拟双色球[拓展案例]"></a>案例八：模拟双色球[拓展案例]</h2><p>各位同学，接下来我们学习第八个案例《模拟双色球》，我们还是先阅读一下案例需求</p>
+<p><img src="/assets/1661996916834.png" srcset="/img/loading.gif" lazyload alt="1661996916834"></p>
+<p>这个案例我们可以采用方法方法来完成</p>
+<ol>
+<li>第一个方法，让用户手动投注，产生一注双色球彩票</li>
+</ol>
+<p><img src="/assets/1662026373775.png" srcset="/img/loading.gif" lazyload alt="1662026373775"></p>
+<ol start="2">
+<li>第二个方法，由系统随机产生一注双色球彩票开奖号码</li>
+</ol>
+<p><img src="/assets/1662026388626.png" srcset="/img/loading.gif" lazyload alt="1662026388626"></p>
+<ol start="3">
+<li>第三个方法，判断传入两组号码，用于判断彩票的中奖情况</li>
+</ol>
+<p><img src="/assets/1662026410363.png" srcset="/img/loading.gif" lazyload alt="1662026410363"></p>
+<h3 id="8-1-手动投注"><a href="#8-1-手动投注" class="headerlink" title="8.1 手动投注"></a>8.1 手动投注</h3><p>编写一个方法，让用户手动投注，产生一注双色球彩票，思路分析</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	双色球彩票的规则非常明确，没有什么数据需要传递给方法。<br>	所以，不需要参数<br><br><span class="hljs-number">2.</span>接着，考虑方法是否需要返回值？<br>	方法最终的结果是需要一注双色球彩票的号码，一注彩票有<span class="hljs-number">7</span>个号码，可以用一个数组来存<br>	所以，返回值是一个数组<br><br><span class="hljs-number">3.</span>最后，考虑方法内部的业务逻辑怎么编写？<br>	<span class="hljs-number">1</span>)首先需要准备一个<span class="hljs-type">int</span>类型数组，长度为<span class="hljs-number">7</span>; 用于存储产生的投注号码<br>	<span class="hljs-number">2</span>)循环遍历数组的前<span class="hljs-number">6</span>个元素，采用键盘录入的方式，给前区<span class="hljs-number">6</span>个红球赋值<br>		要求录入的整数在<span class="hljs-number">1</span>~<span class="hljs-number">33</span>范围内，同时录入的整数在数组中不能已存在，否则重新录入<br>	<span class="hljs-number">3</span>)最后再录入一个整数，给后区一个蓝球赋值<br>		要求整数必须在<span class="hljs-number">1</span>~<span class="hljs-number">16</span>范围内<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>手动投注代码如下</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** 1、设计一个方法，用于让用户投注一组号码并返回（前6个是红球号码，最后1个是蓝球号码 ）*/</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] userSelectNumbers()&#123;<br>    <span class="hljs-comment">// 2、创建一个整型数组，用于存储用户投注的7个号码（前6个是红球号码，最后1个是蓝球号码 ）</span><br>    <span class="hljs-type">int</span>[] numbers =  <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">7</span>];<br>    <span class="hljs-comment">// numbers = [0, 0, 0, 0, 0, 0, 0]</span><br>    <span class="hljs-comment">//            0  1  2  3  4  5  6</span><br><br>    <span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>    <span class="hljs-comment">// 3、遍历前6个位置，让用户依次投注6个红球号码，存入</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; numbers.length - <span class="hljs-number">1</span>; i++) &#123;<br>        <span class="hljs-comment">// i = 0 1 2 3 4 5</span><br><br>        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>            <span class="hljs-comment">// 4、开始让用户为当前位置投注一个红球号码（1-33之间，不能重复）</span><br>            System.out.println(<span class="hljs-string">&quot;请您输入第&quot;</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;个红球号码（1-33之间，不能重复）：&quot;</span>);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">number</span> <span class="hljs-operator">=</span> sc.nextInt();<br><br>            <span class="hljs-comment">// 5、先判断用户输入的红球号码是否在1-33之间</span><br>            <span class="hljs-keyword">if</span>(number &lt; <span class="hljs-number">1</span> || number &gt; <span class="hljs-number">33</span>)&#123;<br>                System.out.println(<span class="hljs-string">&quot;对不起，您输入的红球号码不在1-33之间，请确认！&quot;</span>);<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">// 号码是在1-33之间了，接着还要继续判断这个号码是否重复，不重复才可以使用。</span><br>                <span class="hljs-keyword">if</span>(exist(numbers, number))&#123;<br>                    <span class="hljs-comment">// number当前这个红球号码是重复了。</span><br>                    System.out.println(<span class="hljs-string">&quot;对不起，您当前输入的红球号码前面选择过，重复了，请确认！&quot;</span>);<br>                &#125;<span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-comment">// number记住的这个号码没有重复了，就可以使用了。</span><br>                    numbers[i] = number;<br>                    <span class="hljs-keyword">break</span>; <span class="hljs-comment">// 结束当次投注，结束了当前死循环。</span><br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 6、投注最后一个蓝球号码。</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>        System.out.println(<span class="hljs-string">&quot;请您输入最后1个蓝球号码（1-16）：&quot;</span>);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">number</span> <span class="hljs-operator">=</span> sc.nextInt();<br>        <span class="hljs-keyword">if</span>(number &lt; <span class="hljs-number">1</span> || number &gt; <span class="hljs-number">16</span>)&#123;<br>            System.out.println(<span class="hljs-string">&quot;对不起，您输入的蓝球号码范围不对！&quot;</span>);<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            numbers[<span class="hljs-number">6</span>] = number;<br>            <span class="hljs-keyword">break</span>; <span class="hljs-comment">// 蓝球号码录入成功，结束死循环</span><br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> numbers;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>每键盘录入一个号码，需要判断这个号码在数组中是否存在，存在返回true；不存在返回false</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">exist</span><span class="hljs-params">(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> number)</span> &#123;<br>    <span class="hljs-comment">// 需求：判断number这个数字是否在numbers数组中存在。</span><br>    <span class="hljs-comment">// numbers = [12, 25, 18, 0, 0, 0, 0]</span><br>    <span class="hljs-comment">// number = 12</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; numbers.length; i++) &#123;<br>        <span class="hljs-keyword">if</span>(numbers[i] == <span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(numbers[i] == number)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>为了打印一注彩票的号码（数组中的元素），把打印数组中的元素也写成方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printArray</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>    System.out.print(<span class="hljs-string">&quot;[&quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;<br>        System.out.print(i == arr.length - <span class="hljs-number">1</span> ? arr[i] : arr[i] + <span class="hljs-string">&quot;, &quot;</span>);<br>    &#125;<br>    System.out.println(<span class="hljs-string">&quot;]&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在main方法中测试，运行看能不能产生一注彩票号码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test8</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成双色球系统的开发。</span><br>        <span class="hljs-type">int</span>[] userNumbers = userSelectNumbers();<br>        System.out.println(<span class="hljs-string">&quot;您投注的号码：&quot;</span>);<br>        printArray(userNumbers);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="8-2-随机开奖号码"><a href="#8-2-随机开奖号码" class="headerlink" title="8.2 随机开奖号码"></a>8.2 随机开奖号码</h3><p>编写一个方法，让用户自动机选投注，产生一注双色球彩票，思路分析</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	双色球彩票的规则非常明确，没有什么数据需要传递给方法。<br>	所以，不需要参数<br><br><span class="hljs-number">2.</span>接着，考虑方法是否需要返回值？<br>	方法最终的结果是需要一注双色球彩票的号码，一注彩票有<span class="hljs-number">7</span>个号码，可以用一个数组来存<br>	所以，返回值是一个数组<br><br><span class="hljs-number">3.</span>最后，考虑方法内部的业务逻辑怎么编写？<br>	<span class="hljs-number">1</span>)首先需要准备一个<span class="hljs-type">int</span>类型数组，长度为<span class="hljs-number">7</span>; 用于存储产生的投注号码<br>	<span class="hljs-number">2</span>)循环遍历数组的前<span class="hljs-number">6</span>个元素，采用生成随机数的的方式，给前区<span class="hljs-number">6</span>个红球赋值<br>		要求生成的随机数在<span class="hljs-number">1</span>~<span class="hljs-number">33</span>范围内，同时随机的整数数组中不能已存在，否则重新生产<br>	<span class="hljs-number">3</span>)最后再随机一个整数，给后区一个蓝球赋值<br>		要求随机整数必须在<span class="hljs-number">1</span>~<span class="hljs-number">16</span>范围内<br></code></pre></td></tr></table></figure>
+
+<p>机选号码，代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** 2、设计一个方法：随机一组中奖号码出来（6个红球号码，1个蓝球号码 ）*/</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] createLuckNumbers()&#123;<br>    <span class="hljs-comment">// 1、创建一个整型数组，用于存储这7个号码</span><br>    <span class="hljs-type">int</span>[] numbers = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">7</span>];<br><br>    <span class="hljs-type">Random</span> <span class="hljs-variable">r</span>  <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br>    <span class="hljs-comment">// 2、遍历前6个位置处，依次随机一个红球号码存入（1-33 不重复）</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; numbers.length - <span class="hljs-number">1</span>; i++) &#123;<br>        <span class="hljs-comment">// i = 0 1 2 3 4 5</span><br>        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>            <span class="hljs-comment">// 3、为当前这个位置随机一个红球号码出来存入。</span><br>            <span class="hljs-comment">//1 - 33 ==&gt; -1 ===&gt; (0 , 32) + 1</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">number</span> <span class="hljs-operator">=</span> r.nextInt(<span class="hljs-number">33</span>) + <span class="hljs-number">1</span>;<br><br>            <span class="hljs-comment">// 4、判断这个号码是否之前出现过（红球号码不能重复）。</span><br>            <span class="hljs-keyword">if</span>(!exist(numbers, number))&#123;<br>                <span class="hljs-comment">// number不重复。</span><br>                numbers[i] = number;<br>                <span class="hljs-comment">//结束死循环，代表找到了当前这个位置的一个不重复的红球号码了。</span><br>                <span class="hljs-keyword">break</span>; <br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 3、录入一个蓝球号码。 1-16</span><br>    numbers[<span class="hljs-number">6</span>] = r.nextInt(<span class="hljs-number">16</span>) + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> numbers;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在main方法中测试，看是否能够产生一注彩票</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test8</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成双色球系统的开发。</span><br>        <span class="hljs-comment">//用户手动投注</span><br>        <span class="hljs-type">int</span>[] userNumbers = userSelectNumbers();<br>        System.out.println(<span class="hljs-string">&quot;您投注的号码：&quot;</span>);<br>        printArray(userNumbers);<br>        <br>        <span class="hljs-comment">//生成中奖号码</span><br>        <span class="hljs-type">int</span>[] luckNumbers = createLuckNumbers();<br>        System.out.println(<span class="hljs-string">&quot;中奖的号码：&quot;</span>);<br>        printArray(luckNumbers);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="8-3-判断是否中奖"><a href="#8-3-判断是否中奖" class="headerlink" title="8.3 判断是否中奖"></a>8.3 判断是否中奖</h3><p>编写一个方法，判断用户的彩票号码是否中奖，具体中奖规则如下</p>
+<ul>
+<li><p>6个红球+1个蓝球 ，奖金1000万</p>
+</li>
+<li><p>6个红球+0个蓝球，奖金500万</p>
+</li>
+<li><p>5个红球+1个蓝球，奖金3000块</p>
+</li>
+<li><p>5个红球+0个蓝球，或者4个红球+1个蓝球，奖金200块</p>
+</li>
+<li><p>4个红球+0个蓝球，或者3个红球+1个蓝球，奖金10块</p>
+</li>
+<li><p>小于3个红球+1个蓝球，奖金5块</p>
+</li>
+<li><p>如果前面的都不成立，就中奖，算你为福利事业做贡献了。</p>
+</li>
+</ul>
+<p>编写方法的思路如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>首先，考虑方法是否需要接收数据处理？<br>	判断彩票是否中奖，需要有两组号码；一组号码是彩票号码，一组号码是开奖号码<br>	所以，参数需要有两个数组<br><br><span class="hljs-number">2.</span>接着，考虑方法是否需要返回值？<br>	方法不需要返回结果，中了奖，直接将奖项打印输出就行了。<br>	【注意：这只是提供一种代码的编写方案，你将中奖的金额返回也行】<br><br><span class="hljs-number">3.</span>最后，考虑方法内部的业务逻辑怎么编写？<br>	<span class="hljs-number">1</span>)定义两个变量redCount和blueCount用来记录，红球的个数和蓝球的个数<br>	<span class="hljs-number">2</span>)遍历两个数组中前<span class="hljs-number">6</span>个元素(红球)，判断两个数组中有没有相同元素<br>		如果找到一个相同元素，则redCount++<br>    <span class="hljs-number">3</span>)比较两个数组中最后一个元素(蓝球)是否相同<br>    	如果相同，则blueCount++<br>	<span class="hljs-number">4</span>)根据红球和蓝球的命中个数，打印输出对应的奖项<br></code></pre></td></tr></table></figure>
+
+<p>代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** 3、设计一个方法，用于判断用户的中奖情况 */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">judge</span><span class="hljs-params">(<span class="hljs-type">int</span>[] userNumbers,<span class="hljs-type">int</span>[] luckNumbers)</span>&#123;<br>    <span class="hljs-comment">// userNumbers = [12, 14, 16, 18, 23, 26, 8]</span><br>    <span class="hljs-comment">// luckNumbers = [16, 17, 18, 19, 26, 32, 8]</span><br><br>    <span class="hljs-comment">// 2、分别定义2个变量用于记住红球命中了几个以及蓝球命中了几个</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">redCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">blueCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>    <span class="hljs-comment">// 先判断红球命中的数量。</span><br>    <span class="hljs-comment">// 遍历用户投注的号码的前6个红球</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; userNumbers.length - <span class="hljs-number">1</span>; i++) &#123;<br>        <span class="hljs-comment">// userNumbers[i]</span><br>        <span class="hljs-comment">// 开始遍历中奖号码的前6个红球号码，看用户当前选择的这个号码是否命中了</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; luckNumbers.length - <span class="hljs-number">1</span>; j++) &#123;<br>            <span class="hljs-keyword">if</span>(userNumbers[i] == luckNumbers[j])&#123;<br>                redCount++;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 3、判断蓝球是否命中了</span><br>    blueCount = userNumbers[<span class="hljs-number">6</span>] == luckNumbers[<span class="hljs-number">6</span>] ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;<br><br>    System.out.println(<span class="hljs-string">&quot;您命中的红球数量是：&quot;</span> + redCount);<br>    System.out.println(<span class="hljs-string">&quot;您命中的蓝球数量是：&quot;</span> + blueCount);<br><br>    <span class="hljs-comment">// 4、判断中奖详情，并输出结果</span><br>    <span class="hljs-keyword">if</span>(redCount == <span class="hljs-number">6</span> &amp;&amp; blueCount == <span class="hljs-number">1</span>)&#123;<br>        System.out.println(<span class="hljs-string">&quot;恭喜您，中奖1000万，可以开始享受人生了~~~&quot;</span>);<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(redCount == <span class="hljs-number">6</span> &amp;&amp; blueCount == <span class="hljs-number">0</span>)&#123;<br>        System.out.println(<span class="hljs-string">&quot;恭喜您，中奖500万，可以稍微开始享受人生了~~~&quot;</span>);<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(redCount == <span class="hljs-number">5</span> &amp;&amp; blueCount == <span class="hljs-number">1</span>)&#123;<br>        System.out.println(<span class="hljs-string">&quot;恭喜您，中奖3000元，可以出去吃顿小龙虾了~&quot;</span>);<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(redCount == <span class="hljs-number">5</span> &amp;&amp; blueCount == <span class="hljs-number">0</span> || redCount == <span class="hljs-number">4</span> &amp;&amp; blueCount == <span class="hljs-number">1</span>)&#123;<br>        System.out.println(<span class="hljs-string">&quot;恭喜您，中了小奖：200元~&quot;</span>);<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(redCount == <span class="hljs-number">4</span> &amp;&amp; blueCount == <span class="hljs-number">0</span> || redCount == <span class="hljs-number">3</span> &amp;&amp; blueCount == <span class="hljs-number">1</span>)&#123;<br>        System.out.println(<span class="hljs-string">&quot;中了10元~&quot;</span>);<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( redCount &lt; <span class="hljs-number">3</span> &amp;&amp; blueCount == <span class="hljs-number">1</span>)&#123;<br>        System.out.println(<span class="hljs-string">&quot;中了5元~&quot;</span>);<br>    &#125;<span class="hljs-keyword">else</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;感谢您对福利事业做出的巨大贡献~~~&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在main方法中测试，检测是否中奖的方法是否正确</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test8</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 目标：完成双色球系统的开发。</span><br>        <span class="hljs-comment">//用户投注</span><br>        <span class="hljs-type">int</span>[] userNumbers = userSelectNumbers();<br>        System.out.println(<span class="hljs-string">&quot;您投注的号码：&quot;</span>);<br>        printArray(userNumbers);<br>		<br>        <span class="hljs-comment">//随机产生一个中奖号码</span><br>        <span class="hljs-type">int</span>[] luckNumbers = createLuckNumbers();<br>        System.out.println(<span class="hljs-string">&quot;中奖的号码：&quot;</span>);<br>        printArray(luckNumbers);<br><br>        <span class="hljs-comment">//判断用户投注的号码是否中奖</span><br>        judge(userNumbers, luckNumbers);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://example.com/2023/12/01/day06-Java编程案例（专题）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>华安</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年9月10日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/12/01/day01--%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/01/day05-%E6%96%B9%E6%B3%95/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
