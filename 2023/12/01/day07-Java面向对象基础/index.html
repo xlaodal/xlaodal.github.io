@@ -1,0 +1,863 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="华安">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="07——面向对象基础各位同学，恭喜大家！！！大家学习完前面的课程后，说明Java的基础语法就全掌握了。 接下来，我们要学习的是Java中最核心的课程——面向对象编程。 一、面向对象入门各位同学，为什么说面向对象是Java最核心的课程呢？因为写Java程序是有套路的，而面向对象就是写Java程序的套路；你如果不知道面向对象编程，那么你Java语言就算白学了。 那这种编程套路是咋回事呢？ 接下来，我们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="07面向对象基础">
+<meta property="og:url" content="http://example.com/2023/12/01/day07-Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="萧代">
+<meta property="og:description" content="07——面向对象基础各位同学，恭喜大家！！！大家学习完前面的课程后，说明Java的基础语法就全掌握了。 接下来，我们要学习的是Java中最核心的课程——面向对象编程。 一、面向对象入门各位同学，为什么说面向对象是Java最核心的课程呢？因为写Java程序是有套路的，而面向对象就是写Java程序的套路；你如果不知道面向对象编程，那么你Java语言就算白学了。 那这种编程套路是咋回事呢？ 接下来，我们">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/assets/1662209848898.png">
+<meta property="og:image" content="http://example.com/assets/1662209886046.png">
+<meta property="og:image" content="http://example.com/assets/1662209899008.png">
+<meta property="og:image" content="http://example.com/assets/1662210110729.png">
+<meta property="og:image" content="http://example.com/assets/1662210587156.png">
+<meta property="og:image" content="http://example.com/assets/1662211382446.png">
+<meta property="og:image" content="http://example.com/assets/1662211620054.png">
+<meta property="og:image" content="http://example.com/assets/1662212402342.png">
+<meta property="og:image" content="http://example.com/assets/1662213156309.png">
+<meta property="og:image" content="http://example.com/assets/1662213268590.png">
+<meta property="og:image" content="http://example.com/assets/1662213744520.png">
+<meta property="og:image" content="http://example.com/assets/1662213891968.png">
+<meta property="og:image" content="http://example.com/assets/1662214650611.png">
+<meta property="og:image" content="http://example.com/assets/1662215061486.png">
+<meta property="og:image" content="http://example.com/assets/1662301823320.png">
+<meta property="og:image" content="http://example.com/assets/1662302089326.png">
+<meta property="og:image" content="http://example.com/assets/1662303254161.png">
+<meta property="og:image" content="http://example.com/assets/1662303676092.png">
+<meta property="og:image" content="http://example.com/assets/1662304435504.png">
+<meta property="og:image" content="http://example.com/assets/1662304779863.png">
+<meta property="og:image" content="http://example.com/assets/1662304859276.png">
+<meta property="og:image" content="http://example.com/assets/1662305406056.png">
+<meta property="og:image" content="http://example.com/assets/1662305928023.png">
+<meta property="og:image" content="http://example.com/assets/1662306602412.png">
+<meta property="og:image" content="http://example.com/assets/1662306879230.png">
+<meta property="og:image" content="http://example.com/assets/1662307191295.png">
+<meta property="og:image" content="http://example.com/assets/1662335204398.png">
+<meta property="og:image" content="http://example.com/assets/1662335451401.png">
+<meta property="og:image" content="http://example.com/assets/1662336287570.png">
+<meta property="og:image" content="http://example.com/assets/1662337507608.png">
+<meta property="og:image" content="http://example.com/assets/1662351774659.png">
+<meta property="og:image" content="http://example.com/assets/1662351990387.png">
+<meta property="og:image" content="http://example.com/assets/1662371089114.png">
+<meta property="og:image" content="http://example.com/assets/1662353340190.png">
+<meta property="article:published_time" content="2023-12-01T15:24:48.765Z">
+<meta property="article:modified_time" content="2023-12-05T02:17:36.821Z">
+<meta property="article:author" content="华安">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/1662209848898.png">
+  
+  
+  
+  <title>07面向对象基础 - 萧代</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>华安</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/9.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="07面向对象基础"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-01 23:24" pubdate>
+          2023年12月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          9.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          82 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">07面向对象基础</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="07——面向对象基础"><a href="#07——面向对象基础" class="headerlink" title="07——面向对象基础"></a>07——面向对象基础</h3><p>各位同学，恭喜大家！！！大家学习完前面的课程后，说明Java的基础语法就全掌握了。</p>
+<p>接下来，我们要学习的是Java中最核心的课程——<strong>面向对象编程</strong>。</p>
+<h2 id="一、面向对象入门"><a href="#一、面向对象入门" class="headerlink" title="一、面向对象入门"></a>一、面向对象入门</h2><p>各位同学，为什么说面向对象是Java最核心的课程呢？因为写Java程序是有套路的，而面向对象就是写Java程序的套路；你如果不知道面向对象编程，那么你Java语言就算白学了。</p>
+<p>那这种编程套路是咋回事呢？ 接下来，我们通过一个案例快速的认识一下。</p>
+<p>现在假设我们需要处理的是学生的姓名、语文成绩、数学成绩这三个数据，要求打印输出这个学生的总成绩，和平均成绩。</p>
+<p><img src="/assets/1662209848898.png" srcset="/img/loading.gif" lazyload alt="1662209848898"></p>
+<p>遇到这样的需求，我们以前都会定义方法来做，如下图所示</p>
+<p>注意：这里每一个方法有<strong>三个参数</strong></p>
+<p><img src="/assets/1662209886046.png" srcset="/img/loading.gif" lazyload alt="1662209886046"></p>
+<p><img src="/assets/1662209899008.png" srcset="/img/loading.gif" lazyload alt="1662209899008"></p>
+<p>定义好方法之后，我们调用方法的时候，需要给每一个方法<strong>传递三个实际参数</strong></p>
+<p><img src="/assets/1662210110729.png" srcset="/img/loading.gif" lazyload alt="1662210110729"></p>
+<p>在上面案例中，这种编程方式是一种面向过程的编程方式。所谓面向过程，就是编写一个的方法，有数据要进行处理就交给方法来处理。</p>
+<p>但是实际上<strong>姓名、语文成绩、数学成绩三个数据可以放在一起，组合成一个对象</strong>，然后让对象提供方法对自己的数据进行处理。这种方式称之为面向对象编程。</p>
+<p><img src="/assets/1662210587156.png" srcset="/img/loading.gif" lazyload alt="1662210587156"></p>
+<p><strong>总结一些：所谓编写对象编程，就是把要处理的数据交给对象，让对象来处理。</strong></p>
+<h2 id="二、深刻认识面向对象"><a href="#二、深刻认识面向对象" class="headerlink" title="二、深刻认识面向对象"></a>二、深刻认识面向对象</h2><p>好的各位同学，在上一节课我们已经用面向对象的编程套路，处理了学生数据。接下来我们就要搞清楚，面向对象的几个最核心问题了。</p>
+<p><img src="/assets/1662211382446.png" srcset="/img/loading.gif" lazyload alt="1662211382446"></p>
+<p>我们把这三个问题搞明白，那么你对面向对象的理解就很到位。 </p>
+<h3 id="2-1-面向对象编程有什么好处？"><a href="#2-1-面向对象编程有什么好处？" class="headerlink" title="2.1 面向对象编程有什么好处？"></a>2.1 面向对象编程有什么好处？</h3><p>先来看第一个问题，面向对象编程到底有什么好处呢？ 那就不得不谈，Java的祖师爷对这个世界的理解了。</p>
+<p>Java的祖师爷，詹姆斯高斯林认为，在这个世界中 <strong>万物皆对象！</strong>任何一个对象都可以包含一些数据，数据属于哪个对象，就由哪个对象来处理。</p>
+<p>这样的话，只要我们找到了对象，其实就找到了对数据的处理方式。</p>
+<p><img src="/assets/1662211620054.png" srcset="/img/loading.gif" lazyload alt="1662211620054"></p>
+<p>所以面向对象编程的好处，用一句话总结就是：面向对象的开发更符合人类的思维习惯，让编程变得更加简单、更加直观。</p>
+<h3 id="2-2-程序中对象到底是个啥？"><a href="#2-2-程序中对象到底是个啥？" class="headerlink" title="2.2 程序中对象到底是个啥？"></a>2.2 程序中对象到底是个啥？</h3><p>说完面向对象编程有什么好处之后，这里有同学可能会有问题了，你刚才举的例子中，“汽车”、“手机”、“蔡徐坤”是一个实实在在的东西，你说是一个对象好理解。那我们程序中的对象到底是个啥呢？</p>
+<p><strong>对象实质上是一种特殊的数据结构</strong>。这种结构怎么理解呢？</p>
+<p>你可以把对象理解成一张表格，表当中记录的数据，就是对象拥有的数据。</p>
+<p><img src="/assets/1662212402342.png" srcset="/img/loading.gif" lazyload alt="1662212402342"></p>
+<p>这就是程序中的对象到底是个啥！ <strong>一句话总结，对象其实就是一张数据表，表当中记录什么数据，对象就处理什么数据。</strong></p>
+<h3 id="2-3-对象是怎么出来的？"><a href="#2-3-对象是怎么出来的？" class="headerlink" title="2.3 对象是怎么出来的？"></a>2.3 对象是怎么出来的？</h3><p>刚刚我们讲到对象就是一张数据表，那么这个数据表是怎么来的呢？这张表是不会无缘无故存在的，因为Java也不知道你这个对象要处理哪些数据，所以这张表需要我们设计出来。</p>
+<p>用什么来设计这张表呢？就是类（class），<strong>类可以理解成对象的设计图</strong>，或者对象的模板。</p>
+<p><img src="/assets/1662213156309.png" srcset="/img/loading.gif" lazyload alt="1662213156309"></p>
+<p>我们需要按照对象的设计图创造一个对象。<strong>设计图中规定有哪些数据，对象中就只能有哪些数据。</strong></p>
+<p><img src="/assets/1662213268590.png" srcset="/img/loading.gif" lazyload alt="1662213268590"></p>
+<p><strong>一句话总结：对象可以理解成一张数据表，而数据表中可以有哪些数据，是有类来设计的。</strong></p>
+<h2 id="三、对象在计算机中的执行原理"><a href="#三、对象在计算机中的执行原理" class="headerlink" title="三、对象在计算机中的执行原理"></a>三、对象在计算机中的执行原理</h2><p>各位同学，前面我们已经带同学写了面向对象的代码，也知道对象到底是咋回事。如果我们再搞清楚对象在计算机中的执行原理，那我们对面向对象的理解就更加专业了。</p>
+<p>按照我们之前讲的数组的执行原理，数组变量记录的其实数数组在堆内存中的地址。其实面向对象的代码执行原理和数组的执行原理是非常类似的。</p>
+<p>其实<code>Student s1 = new Student();</code>这句话中的原理如下</p>
+<ul>
+<li><p><code>Student s1</code>表示的是在栈内存中，创建了一个Student类型的变量，变量名为s1</p>
+</li>
+<li><p>而<code>new Student()</code>会在堆内存中创建一个对象，而对象中包含学生的属性名和属性值</p>
+<p>同时系统会为这个Student对象分配一个地址值0x4f3f5b24</p>
+</li>
+<li><p>接着把对象的地址赋值给栈内存中的变量s1，通过s1记录的地址就可以找到这个对象</p>
+</li>
+<li><p>当执行<code>s1.name=“播妞”</code>时，其实就是通过s1找到对象的地址，再通过对象找到对象的name属性，再给对象的name属性赋值为<code>播妞</code>;</p>
+</li>
+</ul>
+<p>搞明白<code>Student s1 = new Student();</code>的原理之后，<code>Student s2 = new Student();</code>原理完全一样，只是在堆内存中重新创建了一个对象，又有一个新的地址。<code>s2.name</code>是访问另对象的属性。</p>
+<p><img src="/assets/1662213744520.png" srcset="/img/loading.gif" lazyload alt="1662213744520"></p>
+<h2 id="四、类和对象的一些注意事项"><a href="#四、类和对象的一些注意事项" class="headerlink" title="四、类和对象的一些注意事项"></a>四、类和对象的一些注意事项</h2><p>各位同学，前面几节课我们已经入门了。接下来，关于面向对象有一些细枝末节的东西需要给大家交代一下。</p>
+<p>我把这些注意事项已经列举在下面了，我们把几个不好理解的解释一下就可以了（标记方框），其他的大大家一看就能理解。</p>
+<p><img src="/assets/1662213891968.png" srcset="/img/loading.gif" lazyload alt="1662213891968"></p>
+<blockquote>
+<p><strong>第一条</strong>：一个代码文件中，可以写多个class类，但是只能有一个是public修饰，且public修饰的类必须和文件名相同。</p>
+</blockquote>
+<p>假设文件名为<code>Demo1.java</code>，这个文件中假设有两个类<code>Demo1类和Student类</code>，代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//public修饰的类Demo1，和文件名Demo1相同</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo1</span>&#123;<br>    <br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>第二条：</strong>对象与对象之间的数据不会相互影响，但是多个变量指向同一个对象会相互影响。</p>
+</blockquote>
+<p>如下图所示，s1和s2两个变量分别记录的是两个对象的地址值，各自修改各自属性值，是互不影响的。</p>
+<p><img src="/assets/1662214650611.png" srcset="/img/loading.gif" lazyload alt="1662214650611"></p>
+<p>如下图所示，s1和s2两个变量记录的是同一个对象的地址值，s1修改对象的属性值，再用s2访问这个属性，会发现已经被修改了。</p>
+<p><img src="/assets/1662215061486.png" srcset="/img/loading.gif" lazyload alt="1662215061486"></p>
+<h2 id="五、this关键字"><a href="#五、this关键字" class="headerlink" title="五、this关键字"></a>五、this关键字</h2><p>各位同学，接下来我们学习几个面向对象的小知识点，这里我们先认识一下this关键字是什么含义，再说一下this的应用场景。</p>
+<p><strong>this是什么呢？</strong></p>
+<p>this就是一个变量，用在方法中，可以拿到当前类的对象。</p>
+<p>我们看下图所示代码，通过代码来体会这句话到底是什么意思。<strong>哪一个对象调用方法方法中的this就是哪一个对象</strong></p>
+<p><img src="/assets/1662301823320.png" srcset="/img/loading.gif" lazyload alt="1662301823320"></p>
+<p>上面代码运行结果如下</p>
+<p><img src="/assets/1662302089326.png" srcset="/img/loading.gif" lazyload alt="1662302089326"></p>
+<p><strong>this有什么用呢？</strong></p>
+<p>通过this在方法中可以访问本类对象的成员变量。我们看下图代码，分析打印结果是多少</p>
+<p><img src="/assets/1662303254161.png" srcset="/img/loading.gif" lazyload alt="1662303254161"></p>
+<p>分析上面的代码<code>s3.score=325</code>，调用方法printPass方法时，方法中的<code>this.score</code>也是325； 而方法中的参数score接收的是250。执行结果是</p>
+<p><img src="/assets/1662303676092.png" srcset="/img/loading.gif" lazyload alt="1662303676092"></p>
+<p>关于this关键字我们就学习到这里，重点记住这句话：<strong>哪一个对象调用方法方法中的this就是哪一个对象</strong></p>
+<h2 id="六、构造器"><a href="#六、构造器" class="headerlink" title="六、构造器"></a>六、构造器</h2><p>好同学们，接下来我们学习一个非常实用的语法知识——叫做构造器。</p>
+<p>关于构造器，我们掌握下面几个问题就可以了：</p>
+<ol>
+<li>什么是构造器？</li>
+<li>掌握构造器的特点？</li>
+<li>构造器的应用场景？</li>
+<li>构造器有哪些注意事项？</li>
+</ol>
+<p>我们一个问题一个问题的来学习，先来学习什么是构造器？</p>
+<ul>
+<li><p><strong>什么是构造器？</strong></p>
+<p>构造器其实是一种特殊的方法，但是这个方法没有返回值类型，方法名必须和类名相同。</p>
+<p>如下图所示：下面有一个Student类，构造器名称也必须叫Student；也有空参数构造器，也可以有有参数构造器。</p>
+</li>
+</ul>
+<p><img src="/assets/1662304435504.png" srcset="/img/loading.gif" lazyload alt="1662304435504"></p>
+<p>认识了构造器之后，接着我们看一下构造器有什么特点。</p>
+<ul>
+<li><p><strong>构造器的特点？</strong></p>
+<p>在创建对象时，会调用构造器。</p>
+<p>也就是说 <code>new Student()</code>就是在执行构造器，当构造器执行完了，也就意味着对象创建成功。 </p>
+<p><img src="/assets/1662304779863.png" srcset="/img/loading.gif" lazyload alt="1662304779863"></p>
+<p>当执行<code>new Student(&quot;播仔&quot;,99)</code>创建对象时，就是在执行有参数构造器，当有参数构造器执行完，就意味着对象创建完毕了。</p>
+<p><img src="/assets/1662304859276.png" srcset="/img/loading.gif" lazyload alt="1662304859276"></p>
+</li>
+</ul>
+<p>关于构造器的特点，我们记住一句话：<strong>new 对象就是在执行构造方法</strong></p>
+<ul>
+<li><p><strong>构造器的应用场景？</strong></p>
+<p>其实构造器就是用来创建对象的。可以在创建对象时给对象的属性做一些初始化操作。如下图所示：</p>
+</li>
+</ul>
+<p><img src="/assets/1662305406056.png" srcset="/img/loading.gif" lazyload alt="1662305406056"></p>
+<ul>
+<li><p><strong>构造器的注意事项？</strong></p>
+<p>学习完构造器的应用场景之后，接下来我们再看一下构造器有哪些注意事项。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>在设计一个类时，如果不写构造器，Java会自动生成一个无参数构造器。<br><span class="hljs-number">2.</span>一定定义了有参数构造器，Java就不再提供空参数构造器，此时建议自己加一个无参数构造器。<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>关于构造器的这几个问题我们再总结一下。掌握这几个问题，构造方法就算完全明白了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>什么是构造器？<br>	答：构造器其实是一种特殊的方法，但是这个方法没有返回值类型，方法名必须和类名相			同。<br>	<br><span class="hljs-number">2.</span>构造器什么时候执行？<br>	答：<span class="hljs-keyword">new</span> 对象就是在执行构造方法；<br><br><span class="hljs-number">3.</span>构造方法的应用场景是什么？<br>	答：在创建对象时，可以用构造方法给成员变量赋值<br><br><span class="hljs-number">4.</span>构造方法有哪些注意事项？<br>	<span class="hljs-number">1</span>)在设计一个类时，如果不写构造器，Java会自动生成一个无参数构造器。<br>	<span class="hljs-number">2</span>)一定定义了有参数构造器，Java就不再提供空参数构造器，此时建议自己加一个无参数构		造器。<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="七、封装性"><a href="#七、封装性" class="headerlink" title="七、封装性"></a>七、封装性</h2><p>各位同学，接下来我们再学习一个面向对象很重要的特征叫做——封装性。</p>
+<p><strong>1. 什么是封装呢？</strong></p>
+<p>所谓封装，就是用类设计对象处理某一个事物的数据时，应该把要处理的数据，以及处理数据的方法，都设计到一个对象中去。</p>
+<p>比如：在设计学生类时，把学生对象的姓名、语文成绩、数学成绩三个属性，以及求学生总分、平均分的方法，都封装到学生对象中来。</p>
+<p><img src="/assets/1662305928023.png" srcset="/img/loading.gif" lazyload alt="1662305928023"></p>
+<p>现在我们已经知道什么是封装了。那我们学习封装，学习个啥呢？  其实在实际开发中，在用类设计对事处理的数据，以及对数据处理的方法时，是有一些设计规范的。</p>
+<p>封装的设计规范用8个字总结，就是：<strong>合理隐藏、合理暴露</strong></p>
+<p>比如，设计一辆汽车时，汽车的发动机、变速箱等一些零件并不需要让每一个开车的知道，所以就把它们隐藏到了汽车的内部。</p>
+<p>把发动机、变速箱等这些零件隐藏起来，这样做其实更加安全，因为并不是所有人都很懂发动机、变速箱，如果暴露在外面很可能会被不懂的人弄坏。</p>
+<p><img src="/assets/1662306602412.png" srcset="/img/loading.gif" lazyload alt="1662306602412"></p>
+<p>在设计汽车时，除了隐藏部分零件，但是还是得合理的暴露一些东西出来，让司机能够操纵汽车，让汽车跑起来。比如：点火按钮啊、方向盘啊、刹车啊、油门啊、档把啊… 这些就是故意暴露出来让司机操纵汽车的。</p>
+<p><img src="/assets/1662306879230.png" srcset="/img/loading.gif" lazyload alt="1662306879230"></p>
+<p>好了，到现在我们已经理解什么是封装的一些规范了。就是：<strong>合理暴露、合理隐藏</strong></p>
+<p><strong>2. 封装在代码中的体现</strong></p>
+<p>知道什么是封装之后，那封装在代码中如何体现呢？一般我们在设计一个类时，会将成员变量隐藏，然后把操作成员变量的方法对外暴露。</p>
+<p>这里需要用到一个修饰符，叫private，<strong>被private修饰的变量或者方法，只能在本类中被访问。</strong></p>
+<p>如下图所示，<code>private double score;</code> 就相当于把score变量封装在了Student对象的内部，且不对外暴露，你想要在其他类中访问score这个变量就，就不能直接访问了；</p>
+<p>如果你想给Student对象的score属性赋值，得调用对外暴露的方法<code>setScore(int score)</code>，在这个方法中可以对调用者传递过来的数据进行一些控制，更加安全。</p>
+<p><img src="/assets/1662307191295.png" srcset="/img/loading.gif" lazyload alt="1662307191295"></p>
+<p>当你想获取socre变量的值时，就得调用对外暴露的另一个方法 <code>getScore()</code> </p>
+<p>关于封装我们就学习到这里了。</p>
+<h2 id="八、实体JavaBean"><a href="#八、实体JavaBean" class="headerlink" title="八、实体JavaBean"></a>八、实体JavaBean</h2><p>接下来，我们学习一个面向对象编程中，经常写的一种类——叫实体JavaBean类。我们先来看什么是实体类？</p>
+<p><strong>1. 什么是实体类？</strong></p>
+<p>实体类就是一种特殊的类，它需要满足下面的要求：</p>
+<p><img src="/assets/1662335204398.png" srcset="/img/loading.gif" lazyload alt="1662335204398"></p>
+<p>接下来我们按照要求，写一个Student实体类；</p>
+<p><img src="/assets/1662335451401.png" srcset="/img/loading.gif" lazyload alt="1662335451401"></p>
+<p>写完实体类之后，我们看一看它有什么特点？ 其实我们会发现实体类中除了有给对象存、取值的方法就没有提供其他方法了。所以实体类仅仅只是用来封装数据用的。</p>
+<p>知道实体类有什么特点之后，接着我们看一下它有哪些应用场景？</p>
+<p><strong>2. 实体类的应用场景</strong></p>
+<p>在实际开发中，实体类仅仅只用来封装数据，而对数据的处理交给其他类来完成，以实现数据和数据业务处理相分离。如下图所示</p>
+<p><img src="/assets/1662336287570.png" srcset="/img/loading.gif" lazyload alt="1662336287570"></p>
+<p>在实际应用中，会将类作为一种数据类型使用。如下图所示，在StudentOperator类中，定义一个Student类型的成员变量student，然后使用构造器给student成员变量赋值。</p>
+<p>然后在Student的printPass()方法中，使用student调用Student对象的方法，对Student对象的数据进行处理。</p>
+<p><img src="/assets/1662337507608.png" srcset="/img/loading.gif" lazyload alt="1662337507608"></p>
+<p>到这里，我们已经学习了JavaBean实体类的是什么，以及它的应用场景，我们总结一下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span>JavaBean实体类是什么？有啥特点<br>	JavaBean实体类，是一种特殊的；它需要私有化成员变量，有空参数构造方法、同时提供		getXxx和setXxx方法；<br>	<br>	JavaBean实体类仅仅只用来封装数据，只提供对数据进行存和取的方法<br> <br><span class="hljs-number">2.</span>JavaBean的应用场景？<br>	JavaBean实体类，只负责封装数据，而把数据处理的操作放在其他类中，以实现数据和数		据处理相分离。<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="九、面向对象综合案例"><a href="#九、面向对象综合案例" class="headerlink" title="九、面向对象综合案例"></a>九、面向对象综合案例</h2><p>学习完面向对象的语法知识之后。接下来，我们做一个面向对象的综合案例——模仿电影信息系统。</p>
+<p>需求如下图所示</p>
+<pre><code class="hljs">1. 想要展示系统中全部的电影信息（每部电影：编号、名称、价格）
+2. 允许用户根据电影的编号（id），查询出某个电影的详细信息。
+</code></pre>
+<p><img src="/assets/1662351774659.png" srcset="/img/loading.gif" lazyload alt="1662351774659"></p>
+<p>运行程序时，能够根据用户的选择，执行不同的功能，如下图所示</p>
+<p><img src="/assets/1662351990387.png" srcset="/img/loading.gif" lazyload alt="1662351990387"></p>
+<p>按照下面的步骤来完成需求</p>
+<h3 id="1-第一步：定义电影类"><a href="#1-第一步：定义电影类" class="headerlink" title="1. 第一步：定义电影类"></a>1. 第一步：定义电影类</h3><p>首先每一部电影，都包含这部电影的相关信息，比如：电影的编号（id）、电影的名称（name）、电影的价格（price）、电影的分数（score）、电影的导演（director）、电影的主演（actor）、电影的简介（info）。 </p>
+<p>为了去描述每一部电影，有哪些信息，我们可以设计一个电影类（Movie），电影类仅仅只是为了封装电影的信息，所以按照JavaBean类的标准写法来写就行。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Movie</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> id;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> price;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> score;<br>    <span class="hljs-keyword">private</span> String director;<br>    <span class="hljs-keyword">private</span> String actor;<br>    <span class="hljs-keyword">private</span> String info;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Movie</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Movie</span><span class="hljs-params">(<span class="hljs-type">int</span> id, String name, <span class="hljs-type">double</span> price, <span class="hljs-type">double</span> score, String director, String actor, String info)</span> &#123;<br>        <span class="hljs-built_in">this</span>.id = id;<br>        <span class="hljs-built_in">this</span>.name = name;<br>        <span class="hljs-built_in">this</span>.price = price;<br>        <span class="hljs-built_in">this</span>.score = score;<br>        <span class="hljs-built_in">this</span>.director = director;<br>        <span class="hljs-built_in">this</span>.actor = actor;<br>        <span class="hljs-built_in">this</span>.info = info;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getId</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> id;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setId</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span> &#123;<br>        <span class="hljs-built_in">this</span>.id = id;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> name;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setName</span><span class="hljs-params">(String name)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getPrice</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> price;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setPrice</span><span class="hljs-params">(<span class="hljs-type">double</span> price)</span> &#123;<br>        <span class="hljs-built_in">this</span>.price = price;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getScore</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> score;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setScore</span><span class="hljs-params">(<span class="hljs-type">double</span> score)</span> &#123;<br>        <span class="hljs-built_in">this</span>.score = score;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getDirector</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> director;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setDirector</span><span class="hljs-params">(String director)</span> &#123;<br>        <span class="hljs-built_in">this</span>.director = director;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getActor</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> actor;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setActor</span><span class="hljs-params">(String actor)</span> &#123;<br>        <span class="hljs-built_in">this</span>.actor = actor;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getInfo</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> info;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setInfo</span><span class="hljs-params">(String info)</span> &#123;<br>        <span class="hljs-built_in">this</span>.info = info;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-第二步：定义电影操作类"><a href="#2-第二步：定义电影操作类" class="headerlink" title="2. 第二步：定义电影操作类"></a>2. 第二步：定义电影操作类</h3><p>前面我们定义的Movie类，仅仅只是用来封装每一部电影的信息。为了让电影数据和电影数据的操作相分离，我们还得有一个电影操作类（MovieOperator）。</p>
+<p>因为系统中有多部电影，所以电影操作类中MovieOperator，需要有一个<code>Movie[] movies;</code> 用来存储多部电影对象；</p>
+<p>同时在MovieOperator类中，提供对外提供，对电影数组进行操作的方法。如<code>printAllMovies()</code>用于打印数组中所有的电影信息，<code>searchMovieById(int id)</code>方法根据id查找一个电影的信息并打印。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MovieOperator</span> &#123;<br>    <span class="hljs-comment">//因为系统中有多部电影，所以电影操作类中，需要有一个Movie的数组</span><br>    <span class="hljs-keyword">private</span> Movie[] movies;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">MovieOperator</span><span class="hljs-params">(Movie[] movies)</span>&#123;<br>        <span class="hljs-built_in">this</span>.movies = movies;<br>    &#125;<br><br>    <span class="hljs-comment">/** 1、展示系统全部电影信息 movies = [m1, m2, m3, ...]*/</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printAllMovies</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;-----系统全部电影信息如下：-------&quot;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; movies.length; i++) &#123;<br>            <span class="hljs-type">Movie</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> movies[i];<br>            System.out.println(<span class="hljs-string">&quot;编号：&quot;</span> + m.getId());<br>            System.out.println(<span class="hljs-string">&quot;名称：&quot;</span> + m.getName());<br>            System.out.println(<span class="hljs-string">&quot;价格：&quot;</span> + m.getPrice());<br>            System.out.println(<span class="hljs-string">&quot;------------------------&quot;</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/** 2、根据电影的编号查询出该电影的详细信息并展示 */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">searchMovieById</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; movies.length; i++) &#123;<br>            <span class="hljs-type">Movie</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> movies[i];<br>            <span class="hljs-keyword">if</span>(m.getId() == id)&#123;<br>                System.out.println(<span class="hljs-string">&quot;该电影详情如下：&quot;</span>);<br>                System.out.println(<span class="hljs-string">&quot;编号：&quot;</span> + m.getId());<br>                System.out.println(<span class="hljs-string">&quot;名称：&quot;</span> + m.getName());<br>                System.out.println(<span class="hljs-string">&quot;价格：&quot;</span> + m.getPrice());<br>                System.out.println(<span class="hljs-string">&quot;得分：&quot;</span> + m.getScore());<br>                System.out.println(<span class="hljs-string">&quot;导演：&quot;</span> + m.getDirector());<br>                System.out.println(<span class="hljs-string">&quot;主演：&quot;</span> + m.getActor());<br>                System.out.println(<span class="hljs-string">&quot;其他信息：&quot;</span> + m.getInfo());<br>                <span class="hljs-keyword">return</span>; <span class="hljs-comment">// 已经找到了电影信息，没有必要再执行了</span><br>            &#125;<br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;没有该电影信息~&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-第三步：定义测试类"><a href="#3-第三步：定义测试类" class="headerlink" title="3. 第三步：定义测试类"></a>3. 第三步：定义测试类</h3><p>最后，我们需要在测试类中，准备好所有的电影数据，并用一个数组保存起来。每一部电影的数据可以封装成一个对象。然后把对象用数组存起来即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">//创建一个Movie类型的数组</span><br>        Movie[] movies = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Movie</span>[<span class="hljs-number">4</span>];<br>        <span class="hljs-comment">//创建4个电影对象，分别存储到movies数组中</span><br>        movies[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Movie</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;水门桥&quot;</span>, <span class="hljs-number">38.9</span>, <span class="hljs-number">9.8</span>, <span class="hljs-string">&quot;徐克&quot;</span>, <span class="hljs-string">&quot;吴京&quot;</span>,<span class="hljs-string">&quot;12万人想看&quot;</span>);<br>        movies[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Movie</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;出拳吧&quot;</span>, <span class="hljs-number">39</span>, <span class="hljs-number">7.8</span>, <span class="hljs-string">&quot;唐晓白&quot;</span>, <span class="hljs-string">&quot;田雨&quot;</span>,<span class="hljs-string">&quot;3.5万人想看&quot;</span>);<br>        movies[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Movie</span>(<span class="hljs-number">3</span>,<span class="hljs-string">&quot;月球陨落&quot;</span>, <span class="hljs-number">42</span>, <span class="hljs-number">7.9</span>, <span class="hljs-string">&quot;罗兰&quot;</span>, <span class="hljs-string">&quot;贝瑞&quot;</span>,<span class="hljs-string">&quot;17.9万人想看&quot;</span>);<br>        movies[<span class="hljs-number">3</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Movie</span>(<span class="hljs-number">4</span>,<span class="hljs-string">&quot;一点就到家&quot;</span>, <span class="hljs-number">35</span>, <span class="hljs-number">8.7</span>, <span class="hljs-string">&quot;许宏宇&quot;</span>, <span class="hljs-string">&quot;刘昊然&quot;</span>,<span class="hljs-string">&quot;10.8万人想看&quot;</span>);<br>        <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>准备好测试数据之后，接下来就需要对电影数据进行操作。我们已经把对电影操作先关的功能写到了MovieOperator类中，所以接下来，创建MovieOperator类对象，调用方法就可以完成相关功能。</p>
+<p>继续再main方法中，接着写下面的代码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 4、创建一个电影操作类的对象，接收电影数据，并对其进行业务处理</span><br><span class="hljs-type">MovieOperator</span> <span class="hljs-variable">operator</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MovieOperator</span>(movies);<br><span class="hljs-type">Scanner</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>    System.out.println(<span class="hljs-string">&quot;==电影信息系统==&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;1、查询全部电影信息&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;2、根据id查询某个电影的详细信息展示&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;请您输入操作命令：&quot;</span>);<br>    <span class="hljs-type">int</span> <span class="hljs-variable">command</span> <span class="hljs-operator">=</span> sc.nextInt();<br>    <span class="hljs-keyword">switch</span> (command) &#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>            <span class="hljs-comment">// 展示全部电影信息</span><br>            operator.printAllMovies();<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>            <span class="hljs-comment">// 根据id查询某个电影的详细信息展示</span><br>            System.out.println(<span class="hljs-string">&quot;请您输入查询的电影id:&quot;</span>);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> sc.nextInt();<br>            operator.searchMovieById(id);<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">default</span>:<br>            System.out.println(<span class="hljs-string">&quot;您输入的命令有问题~~&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>到这里，电影信息系统就完成了。 小伙伴们，自己尝试写一下吧！！</p>
+<h2 id="十、成员变量和局部变量的区别"><a href="#十、成员变量和局部变量的区别" class="headerlink" title="十、成员变量和局部变量的区别"></a>十、成员变量和局部变量的区别</h2><p>各位同学，面向对象的基础内容咱们已经学习完了。同学们在面向对象代码时，经常会把成员变量和局部变量搞混。所以现在我们讲一讲他们的区别。</p>
+<p><img src="/assets/1662371089114.png" srcset="/img/loading.gif" lazyload alt="1662371089114"></p>
+<p>如下图所示，成员变量在类中方法外，而局部变量在方法中。</p>
+<p><img src="/assets/1662353340190.png" srcset="/img/loading.gif" lazyload alt="1662353340190"></p>
+<hr>
+<p>到这里，我们关于面向对象的基础知识就学习完了。<strong>面向对象的核心点就是封装，将数据和数据的处理方式，都封装到对象中； 至于对象要封装哪些数据？对数据进行怎样的处理？ 需要通过类来设计。</strong></p>
+<p>需要注意的是，不同的人，对同一个对象进行设计，对象封装那些数据，提供哪些方法，可能会有所不同；只要能够完成需求，符合设计规范，都是合理的设计。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java%E5%9F%BA%E7%A1%80/">#Java基础</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>07面向对象基础</div>
+      <div>http://example.com/2023/12/01/day07-Java面向对象基础/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>华安</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年12月5日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/12/01/day08-Java%E5%B8%B8%E7%94%A8API/" title="08Java常用API">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">08Java常用API</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/01/day06-Java%E7%BC%96%E7%A8%8B%E6%A1%88%E4%BE%8B%EF%BC%88%E4%B8%93%E9%A2%98%EF%BC%89/" title="06Java编程案例">
+                        <span class="hidden-mobile">06Java编程案例</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
